@@ -9,27 +9,24 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private CameraMovement cameraMovement;
 
+    public Dictionary<Point, TileScript> Tiles { get; set; }
+
     public float TileSize
     {
         get { return tilePrefabs[0].GetComponent<SpriteRenderer>().sprite.bounds.size.x; }
     }
 
-    // Start is called before the first frame update - Use this for initialization
     void Start()
     {
         // Executes the create level function
         CreateLevel();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     private void CreateLevel()
     {
+        Tiles = new Dictionary<Point, TileScript>();
+        
         string[] mapData = ReadLevelText();
 
         // Calculate map X and Y size
@@ -47,15 +44,17 @@ public class LevelManager : MonoBehaviour
             
             for (int x = 0; x < mapX; x++) // The x positions
             {
-                maxTile = PlaceTile(newTiles[x].ToString(), x, y, worldStart);
+                PlaceTile(newTiles[x].ToString(), x, y, worldStart);
             }
         }
+
+        maxTile = Tiles[new Point(mapX - 1, mapY - 1)].transform.position;
 
         cameraMovement.SetLimits(new Vector3(maxTile.x + TileSize, maxTile.y - TileSize));
 
     }
 
-    private Vector3 PlaceTile(string tileType, int x, int y, Vector3 worldStart)
+    private void PlaceTile(string tileType, int x, int y, Vector3 worldStart)
     {
         // Parses the tile type to an int, so that we can use it as an indexer when we create a new tile
         int tileIndex = int.Parse(tileType); // "1" = 1
@@ -66,7 +65,7 @@ public class LevelManager : MonoBehaviour
         // Uses the new tile variable to change the position of the tile 
         newTile.Setup(new Point(x, y), new Vector3(worldStart.x + (TileSize * x), worldStart.y - (TileSize * y), 0));
 
-        return newTile.transform.position;
+        Tiles.Add(new Point(x, y), newTile);
     }
 
     private string[] ReadLevelText()
