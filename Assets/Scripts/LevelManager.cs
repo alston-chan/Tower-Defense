@@ -61,10 +61,10 @@ public class LevelManager : MonoBehaviour
         int tileIndex = int.Parse(tileType); // "1" = 1
         
         // Creates a new tile and makes a reference to that tile in the newTile variable
-        GameObject newTile = Instantiate(tilePrefabs[tileIndex]);
+        TileScript newTile = Instantiate(tilePrefabs[tileIndex]).GetComponent<TileScript>();
 
-        // Uses the new tile variable to change the position of the tile
-        newTile.transform.position = new Vector3(worldStart.x + (TileSize * x), worldStart.y - (TileSize * y), 0);
+        // Uses the new tile variable to change the position of the tile 
+        newTile.Setup(new Point(x, y), new Vector3(worldStart.x + (TileSize * x), worldStart.y - (TileSize * y), 0));
 
         return newTile.transform.position;
     }

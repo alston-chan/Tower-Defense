@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1239443482465734161}
   - component: {fileID: 3500002987123716023}
+  - component: {fileID: 7873458709821444827}
   m_Layer: 0
   m_Name: water_tile_1
   m_TagString: Untagged
@@ -82,3 +83,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7873458709821444827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2782009866698510616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f88468162e60948a045ae4fd9f3ab7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
