@@ -287,6 +287,10 @@ MonoBehaviour:
   - {fileID: 2782009866698510616, guid: 0d3cb48941b8e5a42a7832af9a8e5be6, type: 3}
   - {fileID: 8069522953915073528, guid: 265f7f8ecf1567a4688adb2e351da9ef, type: 3}
   cameraMovement: {fileID: 519420030}
+  bluePortalPrefab: {fileID: 8467714456750110529, guid: 160e3932d846ee54da86cab095594d3d,
+    type: 3}
+  redPortalPrefab: {fileID: 7761742454651067831, guid: b903f847a6d13cf4cbe1bb0480de2f42,
+    type: 3}
 --- !u!4 &1546721483
 Transform:
   m_ObjectHideFlags: 0

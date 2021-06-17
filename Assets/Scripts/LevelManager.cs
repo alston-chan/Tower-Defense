@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField] private GameObject[] tilePrefabs; // A prefab for creating a single tile
 
     [SerializeField] private CameraMovement cameraMovement;
 
+    // Dictionary that contains all the tiles in our game
     public Dictionary<Point, TileScript> Tiles { get; set; }
+
+    private Point blueSpawn, redSpawn;
+    [SerializeField] private GameObject bluePortalPrefab, redPortalPrefab;
 
     public float TileSize
     {
@@ -52,6 +56,8 @@ public class LevelManager : MonoBehaviour
 
         cameraMovement.SetLimits(new Vector3(maxTile.x + TileSize, maxTile.y - TileSize));
 
+        SpawnPortals();
+
     }
 
     private void PlaceTile(string tileType, int x, int y, Vector3 worldStart)
@@ -77,5 +83,16 @@ public class LevelManager : MonoBehaviour
         string data = bindData.text.Replace(Environment.NewLine, string.Empty);
 
         return data.Split('-');
+    }
+
+    private void SpawnPortals()
+    {
+        blueSpawn = new Point(0, 0);
+
+        Instantiate(bluePortalPrefab, Tiles[blueSpawn].WorldPosition, Quaternion.identity);
+
+        redSpawn = new Point(11, 6);
+
+        Instantiate(redPortalPrefab, Tiles[redSpawn].WorldPosition, Quaternion.identity);
     }
 }
