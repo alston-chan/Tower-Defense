@@ -9,6 +9,8 @@ public class LevelManager : Singleton<LevelManager>
 
     [SerializeField] private CameraMovement cameraMovement;
 
+    [SerializeField] private Transform map;
+
     // Dictionary that contains all the tiles in our game
     public Dictionary<Point, TileScript> Tiles { get; set; }
 
@@ -69,9 +71,7 @@ public class LevelManager : Singleton<LevelManager>
         TileScript newTile = Instantiate(tilePrefabs[tileIndex]).GetComponent<TileScript>();
 
         // Uses the new tile variable to change the position of the tile 
-        newTile.Setup(new Point(x, y), new Vector3(worldStart.x + (TileSize * x), worldStart.y - (TileSize * y), 0));
-
-        Tiles.Add(new Point(x, y), newTile);
+        newTile.Setup(new Point(x, y), new Vector3(worldStart.x + (TileSize * x), worldStart.y - (TileSize * y), 0), map);
     }
 
     private string[] ReadLevelText()
