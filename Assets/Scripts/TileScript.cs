@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TileScript : MonoBehaviour
 {
@@ -24,14 +25,23 @@ public class TileScript : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        // Check to see if mouse is clicking a button or is null
+        if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn != null)
         {
-            PlaceTower();
+            if (Input.GetMouseButtonDown(0))
+            {
+                PlaceTower();
+            }
         }
     }
 
     private void PlaceTower()
     {
-        Instantiate(GameManager.Instance.TowerPrefab, transform.position, Quaternion.identity);
+        GameObject tower = Instantiate(GameManager.Instance.ClickedBtn.TowerPrefab, transform.position, Quaternion.identity);
+        tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y;
+
+        tower.transform.SetParent(transform);
+
+        GameManager.Instance.BuyTower();
     }
 }
