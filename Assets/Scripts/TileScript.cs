@@ -17,6 +17,8 @@ public class TileScript : MonoBehaviour
 
     public bool IsEmpty { get; private set; }
 
+    private Tower myTower;
+
     private Color32 fullColor = new Color32(255, 118, 118, 255);
     private Color32 emptyColor = new Color32(96, 255, 90, 255);
 
@@ -38,7 +40,7 @@ public class TileScript : MonoBehaviour
 
     private void OnMouseOver()
     {
-        // Check to see if mouse is clicking a button or is null
+        // Check to see if mouse is clicking a button or if player has clicked buy button
         if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn != null)
         {
             if (IsEmpty)
@@ -53,6 +55,17 @@ public class TileScript : MonoBehaviour
                 ColorTile(fullColor);
             }
         }
+        else if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn == null && Input.GetMouseButtonDown(0))
+        {
+            if (myTower != null)
+            {
+                GameManager.Instance.SelectTower(myTower);
+            }
+            else
+            {
+                GameManager.Instance.DeselectTower();
+            }
+        }
     }
 
     private void OnMouseExit()
@@ -63,9 +76,11 @@ public class TileScript : MonoBehaviour
     private void PlaceTower()
     {
         GameObject tower = Instantiate(GameManager.Instance.ClickedBtn.TowerPrefab, transform.position, Quaternion.identity);
-        tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y;
+        //tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y;
 
         tower.transform.SetParent(transform);
+
+        this.myTower = tower.GetComponentInChildren<Tower>();
 
         IsEmpty = false;
 

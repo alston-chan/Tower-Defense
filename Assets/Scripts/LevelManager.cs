@@ -17,6 +17,9 @@ public class LevelManager : Singleton<LevelManager>
     private Point blueSpawn, redSpawn;
     [SerializeField] private GameObject bluePortalPrefab, redPortalPrefab;
 
+    public Portal BluePortal { get; set; }
+    public Portal RedPortal { get; set; }
+
     public float TileSize
     {
         get { return tilePrefabs[0].GetComponent<SpriteRenderer>().sprite.bounds.size.x; }
@@ -89,10 +92,14 @@ public class LevelManager : Singleton<LevelManager>
     {
         blueSpawn = new Point(0, 0);
 
-        Instantiate(bluePortalPrefab, Tiles[blueSpawn].WorldPosition, Quaternion.identity);
+        GameObject bluePortalObject = Instantiate(bluePortalPrefab, Tiles[blueSpawn].WorldPosition, Quaternion.identity);
+        BluePortal = bluePortalObject.GetComponent<Portal>();
+        BluePortal.name = "BluePortal";
 
         redSpawn = new Point(11, 6);
 
-        Instantiate(redPortalPrefab, Tiles[redSpawn].WorldPosition, Quaternion.identity);
+        GameObject redPortalObject = Instantiate(redPortalPrefab, Tiles[redSpawn].WorldPosition, Quaternion.identity);
+        RedPortal = redPortalObject.GetComponent<Portal>();
+        RedPortal.name = "RedPortal";
     }
 }

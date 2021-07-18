@@ -6,10 +6,15 @@ public class Hover : Singleton<Hover>
 {
     private SpriteRenderer spriteRenderer;
 
+    // Reference to the range of the tower
+    private SpriteRenderer rangeSpriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
-        this.spriteRenderer = GetComponent<SpriteRenderer>();   
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
+
+        this.rangeSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -31,11 +36,15 @@ public class Hover : Singleton<Hover>
     {
         spriteRenderer.enabled = true;
         this.spriteRenderer.sprite = sprite;
+
+        rangeSpriteRenderer.enabled = true;
     }
 
     public void Deactivate()
     {
         spriteRenderer.enabled = false;
         GameManager.Instance.ClickedBtn = null;
+
+        rangeSpriteRenderer.enabled = false;
     }
 }
