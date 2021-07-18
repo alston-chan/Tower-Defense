@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5534684442233946921}
   - component: {fileID: 3459664848660423302}
   - component: {fileID: 234331497703290075}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tower Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileType: NotBasicTowerProjectile
-  attackCooldown: 0.5
+  attackCooldown: 0.25
+  projectileSpeed: 3.5
 --- !u!1 &8642750584336781066
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class LevelManager : Singleton<LevelManager>
     public Dictionary<Point, TileScript> Tiles { get; set; }
 
     private Point blueSpawn, redSpawn;
+    public Point BlueSpawn { get { return blueSpawn; } }
     [SerializeField] private GameObject bluePortalPrefab, redPortalPrefab;
 
     public Portal BluePortal { get; set; }

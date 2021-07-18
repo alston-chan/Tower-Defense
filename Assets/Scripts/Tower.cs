@@ -9,6 +9,7 @@ public class Tower : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private Monster target;
+    public Monster Target { get { return target;  } }
 
     private Queue<Monster> monsters = new Queue<Monster>();
 
@@ -17,6 +18,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private float attackCooldown;
 
     [SerializeField] private float projectileSpeed;
+    public float ProjectileSpeed { get { return projectileSpeed; } }
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +63,8 @@ public class Tower : MonoBehaviour
         Projectile projectile = GameManager.Instance.Pool.GetObject(projectileType).GetComponent<Projectile>();
 
         projectile.transform.position = transform.position;
+
+        projectile.Initialize(this);
     }
 
     public void Select()

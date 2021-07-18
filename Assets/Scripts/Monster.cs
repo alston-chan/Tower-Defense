@@ -27,7 +27,7 @@ public class Monster : MonoBehaviour
 
             if (transform.position == destination)
             {
-                Destroy(gameObject);
+                Release();
             }
         }
     }
@@ -58,6 +58,14 @@ public class Monster : MonoBehaviour
 
         transform.localScale = to;
 
-        IsActive = true;
+        IsActive = true; 
+    }
+
+    private void Release()
+    {
+        IsActive = false;
+        GridPosition = LevelManager.Instance.BlueSpawn;
+
+        GameManager.Instance.Pool.ReleaseObject(gameObject);
     }
 }
