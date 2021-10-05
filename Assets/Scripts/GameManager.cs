@@ -36,6 +36,7 @@ public class GameManager : Singleton<GameManager>
     public void BuyTower()
     {
         Hover.Instance.Deactivate();
+        PlayerStats.Fish -= 100;  // TESTING: every time a tower is placed, 100 fish (currency) will be subtracted.
     }
 
     public void SelectTower(Tower tower)
