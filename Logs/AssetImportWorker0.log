@@ -179,3 +179,7 @@ Received Import Request.
 Start importing Assets/DogPictures/Staring Dog.jpg using Guid(2f108c597ba54ca4c848f6f0e67ae8fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0b2e78d0bdbc0d09a3cd88b2d024db0') in 0.018559 seconds 
   Import took 0.022458 seconds .
 
+<<<<<<< Updated upstream
+=======
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+>>>>>>> Stashed changes
