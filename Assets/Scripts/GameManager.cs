@@ -80,13 +80,13 @@ public class GameManager : Singleton<GameManager>
         switch (monsterIndex)
         {
             case 0:
-                type = "Enemy 1";
+                type = "Basic";
                 break;
             case 1:
-                type = "Enemy 2";
+                type = "Runner";
                 break;
             case 2:
-                type = "Enemy 3";
+                type = "Tanker";
                 break;
             case 3:
                 type = "Enemy 4";

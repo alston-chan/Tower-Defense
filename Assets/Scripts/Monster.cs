@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
+    [SerializeField] private int health;
+    [SerializeField] private int armor;
+    [SerializeField] private int dodge;
+    [SerializeField] private bool isCamo;
     [SerializeField] private float speed;
 
     private GameObject[] path;

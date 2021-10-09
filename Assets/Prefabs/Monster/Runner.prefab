@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4758974871982465540}
   - component: {fileID: 623540888987655360}
-  - component: {fileID: -1548217930759133945}
-  - component: {fileID: -5859861437357091787}
-  - component: {fileID: 7866397649963617635}
+  - component: {fileID: -7331109361830804362}
+  - component: {fileID: -2928387992129879332}
+  - component: {fileID: 954976026215194982}
   m_Layer: 0
-  m_Name: Enemy 3
+  m_Name: Runner
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 075ceffa91578b84e86fe5bb4a760f96, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0fb6f323e9e629b4fbcd0ef2008d9c52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &-1548217930759133945
+--- !u!50 &-7331109361830804362
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -106,7 +106,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &-5859861437357091787
+--- !u!61 &-2928387992129879332
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7866397649963617635
+--- !u!114 &954976026215194982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,4 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ecb4ba5503c95449b4daa3a4c7b76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  health: 2
+  armor: 0
+  dodge: 0
+  speed: 10
