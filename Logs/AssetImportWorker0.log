@@ -1,71 +1,74 @@
 Using pre-set license
 Built from '2020.3/release' branch; Version is '2020.3.12f1 (b3b2c6512326) revision 11776710'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19042.1237; Version 2009; 64bit' Language: 'en' Physical Memory: 16253 MB
+OS: 'Windows 10 Home; OS build 19043.1237; Version 2009; 64bit' Language: 'en' Physical Memory: 32575 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2020.3.12f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/kevin/OneDrive/Documents/GitHub/Tower-Defense
+C:/Users/saran/Desktop/Tower-Defense
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-59111
-Successfully changed project path to: C:/Users/kevin/OneDrive/Documents/GitHub/Tower-Defense
-C:/Users/kevin/OneDrive/Documents/GitHub/Tower-Defense
+52696
+Successfully changed project path to: C:/Users/saran/Desktop/Tower-Defense
+C:/Users/saran/Desktop/Tower-Defense
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 42.70 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 89.89 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.12f1 (b3b2c6512326)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/kevin/OneDrive/Documents/GitHub/Tower-Defense/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/saran/Desktop/Tower-Defense/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f15)
+    Renderer: NVIDIA GeForce GT 1030 (ID=0x1d01)
     Vendor:   
-    VRAM:     5980 MB
-    Driver:   30.0.14.7212
+    VRAM:     1982 MB
+    Driver:   27.21.14.6627
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56076
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56148
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001768 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003433 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 42.16 ms, found 3 plugins.
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 56.36 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.870 seconds
+- Completed reload, in  1.923 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003792 seconds.
+Registered in 0.005673 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 43.74 ms, found 3 plugins.
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 105.59 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.986 seconds
+- Completed reload, in  1.452 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
 Refreshing native plugins compatible for Editor in 0.46 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2108 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 95.2 MB.
-System memory in use after: 95.3 MB.
+System memory in use before: 95.3 MB.
+System memory in use after: 95.4 MB.
 
 Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 2547.
-Total: 2.245800 ms (FindLiveObjects: 0.267600 ms CreateObjectMapping: 0.100900 ms MarkObjects: 1.803400 ms  DeleteObjects: 0.072400 ms)
+Total: 2.447100 ms (FindLiveObjects: 0.185700 ms CreateObjectMapping: 0.089300 ms MarkObjects: 2.096600 ms  DeleteObjects: 0.073900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -80,106 +83,32 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/DogPictures/sadDog.jpg
-  artifactKey: Guid(a7bf165b46771904787a0d0799288bbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/DogPictures/sadDog.jpg using Guid(a7bf165b46771904787a0d0799288bbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e80ed3d370cfc5ceabe7bf9fd336dce1') in 0.082235 seconds 
-  Import took 0.085391 seconds .
+  path: Assets/Prefabs/Monster/Runner.prefab
+  artifactKey: Guid(9dfbada4037fa394dbc7cbf17cc7a86f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Monster/Runner.prefab using Guid(9dfbada4037fa394dbc7cbf17cc7a86f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32a84548941d7e3f9a831a02c4dde78a') in 0.111595 seconds 
+  Import took 0.115168 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Assets/DogPictures/dachshund.jpg
-  artifactKey: Guid(93f608f85178989479afd2116e038db7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/DogPictures/dachshund.jpg using Guid(93f608f85178989479afd2116e038db7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07982c9a6e15aba001e218ffa9b40ddb') in 0.045405 seconds 
-  Import took 0.048303 seconds .
+  Time since last request: 0.000313 seconds.
+  path: Assets/Prefabs/Monster/Tanker.prefab
+  artifactKey: Guid(2403ce2ec8fc8d44f9ffce5d60d7a568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Monster/Tanker.prefab using Guid(2403ce2ec8fc8d44f9ffce5d60d7a568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47629dc3645938bd8838b3d6bbea3fc3') in 0.015656 seconds 
+  Import took 0.018927 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000298 seconds.
-  path: Assets/DogPictures/hello.jpg
-  artifactKey: Guid(ab49e8cf6874d044d804f61567d85e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/DogPictures/hello.jpg using Guid(ab49e8cf6874d044d804f61567d85e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e62c4a1ae8e294f2a2a5955cf451c536') in 0.015481 seconds 
-  Import took 0.018379 seconds .
+  Time since last request: 0.000235 seconds.
+  path: Assets/Prefabs/Monster/Basic.prefab
+  artifactKey: Guid(4b1b7fb12a7e14e42b532d030df9ee1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Monster/Basic.prefab using Guid(4b1b7fb12a7e14e42b532d030df9ee1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba26b68f7334d772420061a3b8075773') in 0.022155 seconds 
+  Import took 0.027509 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000213 seconds.
-  path: Assets/DogPictures/Original_Doge_meme.jpg
-  artifactKey: Guid(618be96d48daf0945a724d8931f13cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/DogPictures/Original_Doge_meme.jpg using Guid(618be96d48daf0945a724d8931f13cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7deee7bedf90b56094f4a9f2f292086f') in 0.019236 seconds 
-  Import took 0.022302 seconds .
+  Time since last request: 0.000264 seconds.
+  path: Assets/Prefabs/Monster/Enemy 4.prefab
+  artifactKey: Guid(74a4f4e3beec2b2459485af643fa3369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Monster/Enemy 4.prefab using Guid(74a4f4e3beec2b2459485af643fa3369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b5d394a91abd5bffd04e9d696857858') in 0.026256 seconds 
+  Import took 0.030328 seconds .
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000198 seconds.
-  path: Assets/DogPictures/zoey.jpg
-  artifactKey: Guid(79d70245eba66e447b7eebdea7d3c6bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/DogPictures/zoey.jpg using Guid(79d70245eba66e447b7eebdea7d3c6bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a812b3348e3de468bae728fd4bb186bd') in 0.027228 seconds 
-  Import took 0.030776 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000278 seconds.
-  path: Assets/DogPictures
-  artifactKey: Guid(58bacbd3fb7162945bdd207d778829cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/DogPictures using Guid(58bacbd3fb7162945bdd207d778829cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cfb86fdf373a5e82444e1f55686fe63') in 0.002970 seconds 
-  Import took 0.005908 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000280 seconds.
-  path: Assets/DogPictures/Dog Picture.jpg
-  artifactKey: Guid(5b7ac70ca9e9968439f0115185ac1b98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/DogPictures/Dog Picture.jpg using Guid(5b7ac70ca9e9968439f0115185ac1b98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f33e38e01085293ebab704c08219ef1') in 0.023736 seconds 
-  Import took 0.026850 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000260 seconds.
-  path: Assets/DogPictures/sled-dog.jpeg
-  artifactKey: Guid(1ad288ab03f2345459e1a30616933704) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/DogPictures/sled-dog.jpeg using Guid(1ad288ab03f2345459e1a30616933704) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e252c7b26d6bc4acf4656f4c316341f4') in 0.027420 seconds 
-  Import took 0.030732 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000232 seconds.
-  path: Assets/DogPictures/breadDog.jpg
-  artifactKey: Guid(bc465b6cf806a11448f1a48c08c6fa4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/DogPictures/breadDog.jpg using Guid(bc465b6cf806a11448f1a48c08c6fa4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2eca26c6ad2851b9b8c3e3220f24f706') in 0.015663 seconds 
-  Import took 0.018562 seconds .
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 3.51 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 55.6 MB.
-System memory in use after: 55.7 MB.
-
-Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2567.
-Total: 2.364300 ms (FindLiveObjects: 0.207600 ms CreateObjectMapping: 0.050000 ms MarkObjects: 2.081100 ms  DeleteObjects: 0.024600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 5.672151 seconds.
-  path: Assets/DogPictures/Staring Dog.jpg
-  artifactKey: Guid(2f108c597ba54ca4c848f6f0e67ae8fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/DogPictures/Staring Dog.jpg using Guid(2f108c597ba54ca4c848f6f0e67ae8fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0b2e78d0bdbc0d09a3cd88b2d024db0') in 0.018559 seconds 
-  Import took 0.022458 seconds .
-
-<<<<<<< Updated upstream
-=======
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
->>>>>>> Stashed changes
