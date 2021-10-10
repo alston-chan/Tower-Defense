@@ -30,6 +30,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         // Executes the create level function
         CreateLevel();
+
     }
 
 
@@ -63,7 +64,6 @@ public class LevelManager : Singleton<LevelManager>
         cameraMovement.SetLimits(new Vector3(maxTile.x + TileSize, maxTile.y - TileSize));
 
         SpawnPortals();
-
     }
 
     private void PlaceTile(string tileType, int x, int y, Vector3 worldStart)
@@ -103,4 +103,26 @@ public class LevelManager : Singleton<LevelManager>
         RedPortal = redPortalObject.GetComponent<Portal>();
         RedPortal.name = "RedPortal";
     }
+
+
+    // iterates over the tiles in the path
+    public IEnumerator<TileScript> Path() 
+    {
+        List<int[]> path = new List<int[]>
+        {
+            new int[] {1,0}, new int[] {1,1},new int[] {1,2},new int[] {1,3}, new int[] {1,4}, new int[] {1,5}, new int[] {1,6}, new int[] {2,6}, 
+            new int[] {3,6}, new int[] {3,5}, new int[] {3,4}, new int[] {3,3}, new int[] {3,2}, new int[] {3,1}, new int[] {3,0}, new int[] {4,0}, new int[] {5,0},
+            new int[] {5,1}, new int[] {5,2}, new int[] {5,3}, new int[] {5,4},new int[] {5,5}, new int[] {5,6}, new int[] {6,6},new int[] {7,6},new int[] {7,5}, new int[] {7,4},
+            new int[] {7,3}, new int[] {7,2}, new int[] {7,1}, new int[] {7,0}, new int[] {8,0}, new int[] {9,0},new int[] {10,0},new int[] {10,1},new int[] {10,2}, new int[] {10,3},new int[] 
+            {10,4}, new int[] {10,5},new int[] {10,6},new int[] {11,6}
+
+        };
+
+        foreach (int[] point in path)
+        {
+            yield return Tiles[new Point(point[0], point[1])];
+        }
+    }
+
+    
 }
