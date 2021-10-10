@@ -20,7 +20,7 @@ public class Tower : MonoBehaviour
 
     private int damage;
     private float accuracy;
-    private Random rand = new Random();
+    private System.Random rand = new System.Random();
     private bool canSeeCamo;
     private int upgradeDamage;
     private float upgradeAccuracy;
@@ -76,9 +76,9 @@ public class Tower : MonoBehaviour
 
     private void Shoot()
     {
-        # This is the current implementation of accuracy but we could change projectile class later
-        float randomaccuracy = (float) rand.NextDouble();
-        if (randomaccuracy > accuracy) {
+        // This is the current implementation of accuracy but we could change projectile class later
+        float randomAccuracy = (float) rand.NextDouble();
+        if (randomAccuracy > accuracy) {
           return;
         }
 
