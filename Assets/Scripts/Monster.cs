@@ -45,7 +45,7 @@ public class Monster : MonoBehaviour
             {
                 if (path.MoveNext()) 
                 {
-                    destination = path.Current.transform.position;
+                    destination = path.Current.WorldPosition;
                 }
                 else 
                 {
@@ -64,13 +64,13 @@ public class Monster : MonoBehaviour
 
         StartCoroutine(Scale(new Vector3(0.1f, 0.1f), new Vector3(1, 1)));
 
-        destination = LevelManager.Instance.RedPortal.transform.position;
+        // destination = LevelManager.Instance.RedPortal.transform.position;
 
         path = LevelManager.Instance.Path();
         
         if (path.MoveNext())
         {
-            destination = path.Current.transform.position;
+            destination = path.Current.WorldPosition;
         }
 
     }
