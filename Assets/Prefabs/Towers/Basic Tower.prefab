@@ -198,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileType: BasicTowerProjectile
   attackCooldown: 1
+  accuracy: 100
   projectileSpeed: 3.5
 --- !u!1 &8321656080242473959
 GameObject:

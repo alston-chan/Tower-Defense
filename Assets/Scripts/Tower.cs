@@ -19,7 +19,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private float attackCooldown;
 
     private int damage;
-    private float accuracy;
+    public float accuracy;
     private System.Random rand = new System.Random();
     private bool canSeeCamo;
     private int upgradeDamage;
