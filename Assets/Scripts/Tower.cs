@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Tower : MonoBehaviour
 {
     [SerializeField] private string projectileType;
-    
+
     private SpriteRenderer spriteRenderer;
 
     private Monster target;
@@ -16,6 +17,13 @@ public class Tower : MonoBehaviour
     private bool canAttack = true;
     private float attackTimer;
     [SerializeField] private float attackCooldown;
+
+    private int damage;
+    private float accuracy;
+    private Random rand = new Random();
+    private bool canSeeCamo;
+    private int upgradeDamage;
+    private float upgradeAccuracy;
 
     [SerializeField] private float projectileSpeed;
     public float ProjectileSpeed { get { return projectileSpeed; } }
@@ -32,6 +40,14 @@ public class Tower : MonoBehaviour
         Attack();
     }
 
+    void Upgrade(int path) {
+      if (path == 0) {
+        damage += upgradeDamage;
+      } else {
+        accuracy += upgradeAccuracy;
+      }
+    }
+
     private void Attack()
     {
         if (!canAttack)
@@ -43,7 +59,7 @@ public class Tower : MonoBehaviour
                 attackTimer = 0;
             }
         }
-        
+
         if (target == null && monsters.Count > 0)
         {
             target = monsters.Dequeue();
@@ -60,6 +76,12 @@ public class Tower : MonoBehaviour
 
     private void Shoot()
     {
+        # This is the current implementation of accuracy but we could change projectile class later
+        float randomaccuracy = (float) rand.NextDouble();
+        if (randomaccuracy > accuracy) {
+          return;
+        }
+
         Projectile projectile = GameManager.Instance.Pool.GetObject(projectileType).GetComponent<Projectile>();
 
         projectile.transform.position = transform.position;
