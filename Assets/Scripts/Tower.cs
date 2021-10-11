@@ -18,10 +18,17 @@ public class Tower : MonoBehaviour
     private float attackTimer;
     [SerializeField] private float attackCooldown;
 
+<<<<<<< Updated upstream
     private int damage;
     private float accuracy;
     private Random rand = new Random();
     private bool canSeeCamo;
+=======
+    [SerializeField] private int damage;
+    [SerializeField] private float accuracy = 1;
+    private System.Random rand = new System.Random();
+    [SerializeField] private bool canSeeCamo;
+>>>>>>> Stashed changes
     private int upgradeDamage;
     private float upgradeAccuracy;
 
@@ -40,7 +47,7 @@ public class Tower : MonoBehaviour
         Attack();
     }
 
-    void Upgrade(int path) {
+    public void Upgrade(int path) {
       if (path == 0) {
         damage += upgradeDamage;
       } else {
