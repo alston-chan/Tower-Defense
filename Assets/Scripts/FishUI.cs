@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class FishUI : MonoBehaviour
 {
-    public Text fishText;
+    public TextMeshProUGUI fishText;
 
     void Update()
     {
