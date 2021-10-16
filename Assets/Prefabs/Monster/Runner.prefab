@@ -147,4 +147,6 @@ MonoBehaviour:
   health: 2
   armor: 0
   dodge: 0
-  speed: 10
+  isCamo: 0
+  speed: 3
+  destination: {x: 0, y: 0, z: 0}

@@ -75,6 +75,26 @@ public class Monster : MonoBehaviour
 
     }
 
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Projectile"))
+        {
+            // for now: projectile where disappear after collision
+            GameManager.Instance.Pool.ReleaseObject(other.gameObject);
+
+            // is enemy dead?
+            if (health <= 0)
+            {
+                Release();
+            }
+            else
+            {
+                health--;
+            } 
+
+        }
+    }
+
     public IEnumerator Scale(Vector3 from, Vector3 to)
     {
         IsActive = false;
