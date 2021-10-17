@@ -98,7 +98,11 @@ public class Tower : MonoBehaviour
     {
         if (other.CompareTag("Monster"))
         {
-            monsters.Enqueue(other.GetComponent<Monster>());
+            Monster monster = other.GetComponent<Monster>();
+            if (!monster.getCamo() || (canSeeCamo)) 
+            {
+                monsters.Enqueue(monster);
+            }
         }
     }
 

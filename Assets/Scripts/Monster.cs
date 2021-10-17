@@ -10,6 +10,11 @@ public class Monster : MonoBehaviour
     [SerializeField] private bool isCamo;
     [SerializeField] private float speed;
 
+    public bool getCamo()
+    {
+        return isCamo;
+    }
+
     // private GameObject[] path;
 
     private IEnumerator<TileScript> path;
