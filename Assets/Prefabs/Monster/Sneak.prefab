@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4758974871982465540}
   - component: {fileID: 623540888987655360}
   - component: {fileID: -338520348952414114}
-  - component: {fileID: 135131275591208123}
   - component: {fileID: -4380409589610218267}
+  - component: {fileID: 2164902311657674541}
   m_Layer: 0
-  m_Name: Enemy 4
+  m_Name: Sneak
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,8 +106,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &135131275591208123
-BoxCollider2D:
+--- !u!114 &-4380409589610218267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067417619492797530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ecb4ba5503c95449b4daa3a4c7b76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  armor: 0
+  dodge: 0
+  isCamo: 1
+  speed: 3
+  destination: {x: 0, y: 0, z: 0}
+--- !u!60 &2164902311657674541
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -129,20 +147,43 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &-4380409589610218267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067417619492797530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59ecb4ba5503c95449b4daa3a4c7b76c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  destination: {x: 0, y: 0, z: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0.18078938, y: -0.32595962}
+      - {x: 0.21224225, y: -0.27244845}
+      - {x: 0.23257203, y: -0.0745233}
+      - {x: 0.21128601, y: 0.023525424}
+      - {x: 0.1737459, y: 0.12237971}
+      - {x: 0.17, y: 0.17999999}
+      - {x: 0.12038412, y: 0.22034627}
+      - {x: 0.17261271, y: 0.24911076}
+      - {x: 0.23199695, y: 0.32103148}
+      - {x: 0.28, y: 0.35}
+      - {x: 0.28, y: 0.39999998}
+      - {x: 0.1864248, y: 0.43771756}
+      - {x: 0.11915035, y: 0.42092663}
+      - {x: 0.12724996, y: 0.5000987}
+      - {x: 0.16, y: 0.52}
+      - {x: 0.19, y: 0.58}
+      - {x: 0.13, y: 0.63}
+      - {x: 0.03, y: 0.597279}
+      - {x: -0.026175031, y: 0.5517881}
+      - {x: -0.07441375, y: 0.5449949}
+      - {x: -0.089999996, y: 0.57}
+      - {x: -0.14, y: 0.63}
+      - {x: -0.22, y: 0.63}
+      - {x: -0.26999998, y: 0.58}
+      - {x: -0.26999998, y: 0.51}
+      - {x: -0.21259546, y: 0.46654075}
+      - {x: -0.226231, y: 0.41553158}
+      - {x: -0.2680201, y: 0.32133788}
+      - {x: -0.287279, y: 0.20636047}
+      - {x: -0.3303179, y: -0.048645556}
+      - {x: -0.3934696, y: -0.18016353}
+      - {x: -0.41, y: -0.55}
+      - {x: -0.35999998, y: -0.62}
+      - {x: 0.14999999, y: -0.62}
+      - {x: 0.17, y: -0.59999996}
+      - {x: 0.17999999, y: -0.5}
+      - {x: 0.085060656, y: -0.49402702}
+      - {x: 0.100572415, y: -0.4198364}

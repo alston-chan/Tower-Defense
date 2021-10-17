@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4758974871982465540}
   - component: {fileID: 623540888987655360}
   - component: {fileID: -1548217930759133945}
-  - component: {fileID: -5859861437357091787}
   - component: {fileID: 7866397649963617635}
+  - component: {fileID: -3638936642893630717}
   m_Layer: 0
   m_Name: Tanker
   m_TagString: Monster
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 075ceffa91578b84e86fe5bb4a760f96, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3817c6a3b42343e45a9daf5efadeee5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,32 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &-5859861437357091787
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067417619492797530}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.85333335, y: 0.85333335}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &7866397649963617635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,4 +121,63 @@ MonoBehaviour:
   health: 10
   armor: 2
   dodge: 0
+  isCamo: 0
   speed: 1
+  destination: {x: 0, y: 0, z: 0}
+--- !u!60 &-3638936642893630717
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067417619492797530}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 0.85333335, y: 0.85333335}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.25, y: -0.28}
+      - {x: 0.25, y: -0.06}
+      - {x: 0.21797842, y: -0.01966102}
+      - {x: 0.19244203, y: 0.07393685}
+      - {x: 0.13456835, y: 0.21149479}
+      - {x: 0.28, y: 0.35}
+      - {x: 0.28, y: 0.39999998}
+      - {x: 0.18896791, y: 0.4319793}
+      - {x: 0.12405531, y: 0.43766582}
+      - {x: 0.13244204, y: 0.50818944}
+      - {x: 0.19, y: 0.58}
+      - {x: 0.13, y: 0.63}
+      - {x: 0.03, y: 0.63}
+      - {x: -0.00076944754, y: 0.55954325}
+      - {x: -0.08576618, y: 0.5567684}
+      - {x: -0.089999996, y: 0.57}
+      - {x: -0.14, y: 0.63}
+      - {x: -0.22, y: 0.63}
+      - {x: -0.26999998, y: 0.58}
+      - {x: -0.23328534, y: 0.4696139}
+      - {x: -0.23117802, y: 0.39069074}
+      - {x: -0.28821227, y: 0.27025807}
+      - {x: -0.3016427, y: 0.15328535}
+      - {x: -0.33287537, y: 0.03309778}
+      - {x: -0.3299984, y: -0.08426761}
+      - {x: -0.41, y: -0.19999999}
+      - {x: -0.41, y: -0.55}
+      - {x: -0.35999998, y: -0.62}
+      - {x: 0.14999999, y: -0.62}
+      - {x: 0.17, y: -0.59999996}
+      - {x: 0.17999999, y: -0.5}
+      - {x: 0.071578726, y: -0.4551159}

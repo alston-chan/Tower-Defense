@@ -94,7 +94,7 @@ public class GameManager : Singleton<GameManager>
                 type = "Tanker";
                 break;
             case 3:
-                type = "Enemy 4";
+                type = "Sneak";
                 break;
         }
 
