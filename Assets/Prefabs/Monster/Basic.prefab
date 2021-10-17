@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4758974871982465540}
   - component: {fileID: 623540888987655360}
   - component: {fileID: -7402731795869799453}
-  - component: {fileID: 7744359847016275062}
   - component: {fileID: -2983222288631913921}
+  - component: {fileID: 3028410879114121497}
   m_Layer: 0
   m_Name: Basic
   m_TagString: Monster
@@ -106,8 +106,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &7744359847016275062
-BoxCollider2D:
+--- !u!114 &-2983222288631913921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067417619492797530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ecb4ba5503c95449b4daa3a4c7b76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  armor: 0
+  dodge: 0
+  isCamo: 0
+  speed: 2
+  destination: {x: 0, y: 0, z: 0}
+--- !u!60 &3028410879114121497
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -129,24 +147,34 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &-2983222288631913921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067417619492797530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59ecb4ba5503c95449b4daa3a4c7b76c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
-  armor: 0
-  dodge: 0
-  isCamo: 0
-  speed: 2
-  destination: {x: 0, y: 0, z: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 0.24513674, y: -0.2751367}
+      - {x: 0.24027342, y: -0.055136714}
+      - {x: 0.20951495, y: 0.019508231}
+      - {x: 0.22, y: 0.07}
+      - {x: 0.13595702, y: 0.20917968}
+      - {x: 0.28, y: 0.35}
+      - {x: 0.27027348, y: 0.40486324}
+      - {x: 0.13082027, y: 0.417871}
+      - {x: 0.17054686, y: 0.58}
+      - {x: 0.13, y: 0.63}
+      - {x: -0.008906279, y: 0.6008203}
+      - {x: -0.0038484111, y: 0.5520646}
+      - {x: -0.089999996, y: 0.57}
+      - {x: -0.14, y: 0.63}
+      - {x: -0.22, y: 0.63}
+      - {x: -0.26999998, y: 0.58}
+      - {x: -0.27486327, y: 0.52458984}
+      - {x: -0.21040782, y: 0.44922292}
+      - {x: -0.285957, y: 0.17541012}
+      - {x: -0.3347085, y: -0.1046004}
+      - {x: -0.41, y: -0.19999999}
+      - {x: -0.41, y: -0.55}
+      - {x: -0.37183976, y: -0.57618994}
+      - {x: -0.35999998, y: -0.62}
+      - {x: 0.14999999, y: -0.62}
+      - {x: 0.17, y: -0.59999996}
+      - {x: 0.17999999, y: -0.5}
+      - {x: 0.06608039, y: -0.4599061}
+      - {x: 0.16027345, y: -0.37568358}
