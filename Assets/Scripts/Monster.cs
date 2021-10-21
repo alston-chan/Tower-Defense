@@ -44,6 +44,7 @@ public class Monster : MonoBehaviour
             if (transform.position == LevelManager.Instance.RedPortal.transform.position)
             { 
                 Release();
+                PlayerStats.Fish -= 1;  // decrement Fish count by 1 when polar bear makes it to the end. can lose fish depending on what type of bear got through
             }
 
             else if (transform.position == destination) 
