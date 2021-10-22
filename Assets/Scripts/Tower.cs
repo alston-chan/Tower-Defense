@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Tower : MonoBehaviour
+public enum TowerType {BASIC, NOTSOBASIC}
+
+public abstract class Tower : MonoBehaviour
 {
     [SerializeField] private string projectileType;
 
@@ -17,6 +19,8 @@ public class Tower : MonoBehaviour
     private bool canAttack = true;
     private float attackTimer;
     [SerializeField] private float attackCooldown;
+
+    public TowerType TypeOfTower { get; protected set; }
 
     private int damage;
     public float accuracy;

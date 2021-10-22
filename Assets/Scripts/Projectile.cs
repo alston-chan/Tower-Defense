@@ -7,6 +7,10 @@ public class Projectile : MonoBehaviour
     private Monster target;
 
     private Tower parent;
+
+    private TowerType towerType;
+
+    private int pierce;
     
     // Start is called before the first frame update
     void Start()
@@ -32,9 +36,11 @@ public class Projectile : MonoBehaviour
         }
     }
 
+
     public void Initialize(Tower parent)
     {
         this.target = parent.Target;
         this.parent = parent;
+        this.towerType = parent.TypeOfTower;
     }
 }
