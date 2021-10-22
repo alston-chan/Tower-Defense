@@ -62,6 +62,11 @@ public class GameManager : Singleton<GameManager>
         selectedTower = null;
     }
 
+    public void UpgradeTower()
+    {
+    
+    }
+
     private void HandleEscape()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
