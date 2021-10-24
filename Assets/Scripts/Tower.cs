@@ -9,7 +9,7 @@ public abstract class Tower : MonoBehaviour
 {
     [SerializeField] private string projectileType;
 
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     private Monster target;
     public Monster Target { get { return target;  } }
@@ -33,7 +33,7 @@ public abstract class Tower : MonoBehaviour
     public float ProjectileSpeed { get { return projectileSpeed; } }
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }

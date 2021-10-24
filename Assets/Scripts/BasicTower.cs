@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class BasicTower : Tower
 {
-    private void Start()
+
+    public override void Start()
     {
         TypeOfTower = TowerType.BASIC;
-        
+        base.Start();
     }
 }
