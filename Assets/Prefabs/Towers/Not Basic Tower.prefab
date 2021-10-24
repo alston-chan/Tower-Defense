@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8942607831101463231}
   - component: {fileID: 5534684442233946921}
   - component: {fileID: 3459664848660423302}
-  - component: {fileID: 234331497703290075}
+  - component: {fileID: 3847105800499048334}
   m_Layer: 2
   m_Name: Tower Range
   m_TagString: Untagged
@@ -184,7 +184,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!114 &234331497703290075
+--- !u!114 &3847105800499048334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,10 +196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa34735e8e1f204ea7e2353e50f3f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileType: 
-  attackCooldown: 0
-  accuracy: 0
-  projectileSpeed: 0
+  projectileType: BasicTowerProjectile
+  attackCooldown: 0.1
+  accuracy: 100
+  projectileSpeed: 10
 --- !u!1 &8642750584336781066
 GameObject:
   m_ObjectHideFlags: 0
