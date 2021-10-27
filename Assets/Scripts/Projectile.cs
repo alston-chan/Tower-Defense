@@ -10,6 +10,13 @@ public class Projectile : MonoBehaviour
 
     private TowerType towerType;
 
+    [SerializeField] private int damage;
+
+    public int getDamage()
+    {
+        return damage;
+    }
+    
     private int pierce;
     
     // Start is called before the first frame update

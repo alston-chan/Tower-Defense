@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Monster : MonoBehaviour
 {
+    [SerializeField] private int maxHealth;
     [SerializeField] private int health;
+
+    void restoreHealth()
+    {
+        health = maxHealth;
+    }
+
     [SerializeField] private int armor;
     [SerializeField] private int dodge;
     [SerializeField] private bool isCamo;
@@ -79,6 +87,8 @@ public class Monster : MonoBehaviour
             destination = path.Current.WorldPosition;
         }
 
+        restoreHealth();
+
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -87,17 +97,13 @@ public class Monster : MonoBehaviour
         {
             // for now: projectile where disappear after collision
             GameManager.Instance.Pool.ReleaseObject(other.gameObject);
+            health -= Math.Max(1, other.GetComponent<Projectile>().getDamage() - armor);
 
             // is enemy dead?
             if (health <= 0)
             {
                 Release();
             }
-            else
-            {
-                health--;
-            } 
-
         }
     }
 
