@@ -17,6 +17,8 @@ public class Monster : MonoBehaviour
     [SerializeField] private int dodge;
     [SerializeField] private bool isCamo;
     [SerializeField] private float speed;
+    [SerializeField] private int bounty;
+    [SerializeField] private int lives_damage;
 
     public bool getCamo()
     {
@@ -52,7 +54,7 @@ public class Monster : MonoBehaviour
             if (transform.position == LevelManager.Instance.RedPortal.transform.position)
             { 
                 Release();
-                PlayerStats.Fish -= 1;  // decrement Fish count by 1 when polar bear makes it to the end. can lose fish depending on what type of bear got through
+                PlayerStats.Fish -= lives_damage;  // decrement Fish count when polar bear makes it to the end depending on what type of bear got through
             }
 
             else if (transform.position == destination) 
@@ -103,6 +105,7 @@ public class Monster : MonoBehaviour
             if (health <= 0)
             {
                 Release();
+                PlayerStats.Fish += bounty;  // reward player for killing polar bear
             }
         }
     }

@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 3817c6a3b42343e45a9daf5efadeee5e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2dce167e0b279684b8d73196370c6c83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,10 +119,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2
+  health: 0
   armor: 0
   dodge: 0
   isCamo: 1
   speed: 3
+  bounty: 20
+  lives_damage: 5
   destination: {x: 0, y: 0, z: 0}
 --- !u!60 &2164902311657674541
 PolygonCollider2D:
