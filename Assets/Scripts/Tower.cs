@@ -22,6 +22,8 @@ public abstract class Tower : MonoBehaviour
 
     public TowerType TypeOfTower { get; protected set; }
 
+    public TowerUpgrade[] Upgrades { get; protected set; }
+
     private int damage;
     public float accuracy;
     private System.Random rand = new System.Random();
