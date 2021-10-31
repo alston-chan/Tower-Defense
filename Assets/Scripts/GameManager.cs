@@ -35,7 +35,8 @@ public class GameManager : Singleton<GameManager>
 
     public bool BuyTower()
     {
-        int tower_cost = 100;  // pass in tower cost once implemented
+        // int tower_cost = selectedTower.price;  // pass in tower cost once implemented
+        int towe_cost = 100
         if (PlayerStats.Fish >= tower_cost)  // do nothing if can't afford tower
         {
             PlayerStats.Fish -= tower_cost;  // TESTING: every time a tower is placed, 100 fish (currency) will be subtracted.
