@@ -62,9 +62,18 @@ public class GameManager : Singleton<GameManager>
         selectedTower = null;
     }
 
-    public void UpgradeTower()
+    public void UpgradeDamage()
     {
         selectedTower.Upgrade(0);
+    }
+
+    public void UpgradeAttackCooldown() 
+    {
+        selectedTower.Upgrade(1);
+    }
+
+    public void UpgradeCamo() {
+        selectedTower.Upgrade(2);
     }
 
     private void HandleEscape()

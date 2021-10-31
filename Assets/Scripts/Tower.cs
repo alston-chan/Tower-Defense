@@ -29,6 +29,8 @@ public abstract class Tower : MonoBehaviour
     private int upgradeDamage = 10;
     private float upgradeAccuracy;
 
+    private float upgradeAttackCooldown;
+
     [SerializeField] private float projectileSpeed;
     public float ProjectileSpeed { get { return projectileSpeed; } }
 
@@ -47,8 +49,10 @@ public abstract class Tower : MonoBehaviour
     public void Upgrade(int path) {
       if (path == 0) {
         damage += upgradeDamage;
+      } if (path == 1) {
+        attackCooldown -= upgradeAttackCooldown;
       } else {
-        accuracy += upgradeAccuracy;
+        canSeeCamo = true;
       }
     }
 
