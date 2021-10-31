@@ -124,6 +124,8 @@ MonoBehaviour:
   dodge: 0
   isCamo: 1
   speed: 3
+  bounty: 20
+  lives_damage: 5
   destination: {x: 0, y: 0, z: 0}
 --- !u!60 &2164902311657674541
 PolygonCollider2D:

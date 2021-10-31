@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class NotSoBasicTower : Tower
 {
-
-    public override  void Start()
+    public override void Start()
     {
         TypeOfTower = TowerType.NOTSOBASIC;
         base.Start();

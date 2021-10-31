@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BasicTower : Tower
 {
-
     public override void Start()
     {
         TypeOfTower = TowerType.BASIC;
