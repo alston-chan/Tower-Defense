@@ -44,10 +44,11 @@ public class Projectile : MonoBehaviour
     }
 
 
-    public void Initialize(Tower parent)
+    public void Initialize(Tower parent, int towerDamage)
     {
         this.target = parent.Target;
         this.parent = parent;
         this.towerType = parent.TypeOfTower;
+        this.damage = towerDamage;
     }
 }

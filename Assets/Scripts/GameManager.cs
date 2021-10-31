@@ -64,7 +64,7 @@ public class GameManager : Singleton<GameManager>
 
     public void UpgradeTower()
     {
-    
+        selectedTower.Upgrade(0);
     }
 
     private void HandleEscape()

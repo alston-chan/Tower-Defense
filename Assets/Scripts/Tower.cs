@@ -22,11 +22,11 @@ public abstract class Tower : MonoBehaviour
 
     public TowerType TypeOfTower { get; protected set; }
 
-    private int damage;
+    [SerializeField] private int damage;
     public float accuracy;
     private System.Random rand = new System.Random();
     private bool canSeeCamo;
-    private int upgradeDamage;
+    private int upgradeDamage = 10;
     private float upgradeAccuracy;
 
     [SerializeField] private float projectileSpeed;
@@ -44,7 +44,7 @@ public abstract class Tower : MonoBehaviour
         Attack();
     }
 
-    void Upgrade(int path) {
+    public void Upgrade(int path) {
       if (path == 0) {
         damage += upgradeDamage;
       } else {
@@ -90,7 +90,7 @@ public abstract class Tower : MonoBehaviour
 
         projectile.transform.position = transform.position;
 
-        projectile.Initialize(this);
+        projectile.Initialize(this, damage);
     }
 
     public void Select()
