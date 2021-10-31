@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TowerBtn : MonoBehaviour
 {
-    [SerializeField] private GameObject towerPrefab;
+    [SerializeField] public GameObject towerPrefab;
 
     [SerializeField] private Sprite sprite;
 
