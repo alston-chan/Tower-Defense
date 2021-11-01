@@ -58,7 +58,7 @@ public abstract class Tower : MonoBehaviour
         if (path == 0) {
             damage += upgradeDamage;
             PlayerStats.Fish -= upgradePrice;
-        } if (path == 1) {
+        } else if (path == 1) {
             attackCooldown -= upgradeAttackCooldown;
             PlayerStats.Fish -= upgradePrice;
         } else {
@@ -66,7 +66,8 @@ public abstract class Tower : MonoBehaviour
                 canSeeCamo = true;
                 PlayerStats.Fish -= upgradePrice;            
             }
-        }          
+        }
+        upgradeCounter += 1;          
       }
     }
 
