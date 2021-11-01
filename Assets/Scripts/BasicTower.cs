@@ -11,11 +11,6 @@ public class BasicTower : Tower
     public override void Start()
     {
         TypeOfTower = TowerType.BASIC;
-        Upgrades = new TowerUpgrade[] 
-            {
-                dmg,
-                slow,
-            };
         base.Start();
     }
 }
