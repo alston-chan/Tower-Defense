@@ -26,15 +26,15 @@ public abstract class Tower : MonoBehaviour
     public float accuracy;
     private System.Random rand = new System.Random();
     [SerializeField] private bool canSeeCamo;
-    private int upgradeDamage = 10;
-    private float upgradeAccuracy;
+    [SerializeField] private int upgradeDamage;
+    [SerializeField] private float upgradeAccuracy;
     public int price;
 
-    private float upgradeAttackCooldown;
+    [SerializeField] private float upgradeAttackCooldown;
 
     [SerializeField] private int upgradePrice;
 
-    [SerializaField] private int upgradeMax;
+    [SerializeField] private int upgradeMax;
 
     private int upgradeCounter = 0;
 

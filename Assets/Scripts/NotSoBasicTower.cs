@@ -11,11 +11,6 @@ public class NotSoBasicTower : Tower
     public override void Start()
     {
         TypeOfTower = TowerType.NOTSOBASIC;
-        Upgrades = new TowerUpgrade[] 
-            {
-                dmg,
-                slow,
-            };
         base.Start();
     }
 }
