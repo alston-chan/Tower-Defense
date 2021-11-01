@@ -28,6 +28,7 @@ public abstract class Tower : MonoBehaviour
     [SerializeField] private bool canSeeCamo;
     private int upgradeDamage = 10;
     private float upgradeAccuracy;
+    public int price;
 
     private float upgradeAttackCooldown;
 

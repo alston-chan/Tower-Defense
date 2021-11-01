@@ -200,6 +200,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   attackCooldown: 0.2
   accuracy: 100
+  price: 100
   projectileSpeed: 10
 --- !u!1 &8321656080242473959
 GameObject:
