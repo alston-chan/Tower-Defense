@@ -54,7 +54,7 @@ public abstract class Tower : MonoBehaviour
     }
 
     public void Upgrade(int path) {
-      if (upgradeCounter < upgradeMax) {
+      if (upgradeCounter < upgradeMax && PlayerStats.Fish >= upgradePrice) {
         if (path == 0) {
             damage += upgradeDamage;
             PlayerStats.Fish -= upgradePrice;
