@@ -25,11 +25,17 @@ public abstract class Tower : MonoBehaviour
     [SerializeField] private int damage;
     public float accuracy;
     private System.Random rand = new System.Random();
-    private bool canSeeCamo;
+    [SerializeField] private bool canSeeCamo;
     private int upgradeDamage = 10;
     private float upgradeAccuracy;
 
     private float upgradeAttackCooldown;
+
+    [SerializeField] private int upgradePrice;
+
+    [SerializaField] private int upgradeMax;
+
+    private int upgradeCounter = 0;
 
     [SerializeField] private float projectileSpeed;
     public float ProjectileSpeed { get { return projectileSpeed; } }
@@ -47,12 +53,19 @@ public abstract class Tower : MonoBehaviour
     }
 
     public void Upgrade(int path) {
-      if (path == 0) {
-        damage += upgradeDamage;
-      } if (path == 1) {
-        attackCooldown -= upgradeAttackCooldown;
-      } else {
-        canSeeCamo = true;
+      if (upgradeCounter < upgradeMax) {
+        if (path == 0) {
+            damage += upgradeDamage;
+            PlayerStats.Fish -= upgradePrice;
+        } if (path == 1) {
+            attackCooldown -= upgradeAttackCooldown;
+            PlayerStats.Fish -= upgradePrice;
+        } else {
+            if (canSeeCamo != true) {
+                canSeeCamo = true;
+                PlayerStats.Fish -= upgradePrice;            
+            }
+        }          
       }
     }
 

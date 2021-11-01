@@ -72,7 +72,8 @@ public class GameManager : Singleton<GameManager>
         selectedTower.Upgrade(1);
     }
 
-    public void UpgradeCamo() {
+    public void UpgradeCamo() 
+    {
         selectedTower.Upgrade(2);
     }
 
