@@ -34,7 +34,7 @@ public abstract class Tower : MonoBehaviour
 
     [SerializeField] private int upgradePrice;
 
-    [SerializeField] private int upgradeMax;
+    [SerializeField] private int upgradeMax = 3;
 
     private int upgradeCounter = 0;
 

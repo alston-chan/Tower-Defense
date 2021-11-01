@@ -207,7 +207,7 @@ MonoBehaviour:
   price: 100
   upgradeAttackCooldown: 0.05
   upgradePrice: 50
-  upgradeMax: 0
+  upgradeMax: 3
   projectileSpeed: 10
 --- !u!1 &8321656080242473959
 GameObject:
