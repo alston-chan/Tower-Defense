@@ -86,33 +86,33 @@ public class TileScript : MonoBehaviour
             Debug.Log("Before: " + t);
             if (spriteBaseName == "Base") {
                 if (dir == "up") {
-                    t = Resources.Load("Assets/Resources/Prefabs/Towers/BaseU") as GameObject;
+                    t = Resources.Load("Prefabs/Towers/BaseU") as GameObject;
                 } else if (dir == "down") {
-                    t = Resources.Load("Assets/Resources/Prefabs/Towers/BaseD") as GameObject;
+                    t = Resources.Load("Prefabs/Towers/BaseD") as GameObject;
                 } else if (dir == "left") {
-                    t = Resources.Load("Assets/Resources/Prefabs/Towers/BaseL") as GameObject;
+                    t = Resources.Load("Prefabs/Towers/BaseL") as GameObject;
                 } else {
-                    t = Resources.Load("Assets/Resources/Prefabs/Towers/BaseR") as GameObject;
+                    t = Resources.Load("Prefabs/Towers/BaseR") as GameObject;
                 }
             } else if (spriteBaseName == "SBL") {
                 if (dir == "up") {
-                    t = Resources.Load("Assets/Resources/Prefabs/Towers/SBLU") as GameObject;
+                    t = Resources.Load("Prefabs/Towers/SBLU") as GameObject;
                 } else if (dir == "down") {
-                    t = Resources.Load("Assets/Resources/Prefabs/Towers/SBLD") as GameObject;
+                    t = Resources.Load("Prefabs/Towers/SBLD") as GameObject;
                 } else if (dir == "left") {
-                    t = Resources.Load("Assets/Resources/Prefabs/Towers/SBLL") as GameObject;
+                    t = Resources.Load("Prefabs/Towers/SBLL") as GameObject;
                 } else {
-                    t = Resources.Load("Assets/Resources/Prefabs/Towers/SBLR") as GameObject;
+                    t = Resources.Load("Prefabs/Towers/SBLR") as GameObject;
                 }
             } else if (spriteBaseName == "Wizard") {
                 if (dir == "up") {
-                    t = Resources.Load("Assets/Resources/Prefabs/Towers/WizardU") as GameObject;
+                    t = Resources.Load("Prefabs/Towers/WizardU") as GameObject;
                 } else if (dir == "down") {
-                    t = Resources.Load("Assets/Resources/Prefabs/Towers/WizardD") as GameObject;
+                    t = Resources.Load("Prefabs/Towers/WizardD") as GameObject;
                 } else if (dir == "left") {
-                    t = Resources.Load("Assets/Resources/Prefabs/Towers/WizardL") as GameObject;
+                    t = Resources.Load("Prefabs/Towers/WizardL") as GameObject;
                 } else {
-                    t = Resources.Load("Assets/Resources/Prefabs/Towers/WizardR") as GameObject;
+                    t = Resources.Load("Prefabs/Towers/WizardR") as GameObject;
                 }
             }
             Debug.Log("After: " + t);

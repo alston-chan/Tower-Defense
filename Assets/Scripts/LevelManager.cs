@@ -156,7 +156,6 @@ public class LevelManager : Singleton<LevelManager>
         if (validTile(right[0], right[1])) {
             foreach (int[] coord in this.path) {
                 if (Enumerable.SequenceEqual(coord, right)) {
-                    Debug.Log("Right is in the path");
                     return "right";
                 }
             }
