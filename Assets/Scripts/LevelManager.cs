@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 public class LevelManager : Singleton<LevelManager>
 {
@@ -141,29 +142,37 @@ public class LevelManager : Singleton<LevelManager>
     /** Returns the string of the direction that the tower sprite should
     be facing when placed on tile X, Y based on the tiles in PATH */
     public string getDirection(int x, int y) {
-        int[] up = new int[]{x, y + 1};
-        int[] down = new int[]{x, y - 1};
+        int[] up = new int[]{x, y - 1};
+        int[] down = new int[]{x, y + 1};
         int[] left = new int[]{x - 1, y};
         int[] right = new int[]{x + 1, y};
-        Debug.Log(this.path);
-        if (validTile(up[0], up[1])) {
-            if (this.path.Contains(up)) {
-                return "up";
-            }
-        }
-        if (validTile(down[0], down[1])) {
-            if (this.path.Contains(down)) {
-                return "down";
-            }
-        }
         if (validTile(left[0], left[1])) {
-            if (this.path.Contains(left)) {
-                return "left";
+            foreach (int[] coord in this.path) {
+                if (Enumerable.SequenceEqual(coord, left)) {
+                    return "left";
+                }
             }
         }
         if (validTile(right[0], right[1])) {
-            if (this.path.Contains(right)) {
-                return "right";
+            foreach (int[] coord in this.path) {
+                if (Enumerable.SequenceEqual(coord, right)) {
+                    Debug.Log("Right is in the path");
+                    return "right";
+                }
+            }
+        }
+        if (validTile(down[0], down[1])) {
+            foreach (int[] coord in this.path) {
+                if (Enumerable.SequenceEqual(coord, down)) {
+                    return "down";
+                }
+            }
+        }
+        if (validTile(up[0], up[1])) {
+            foreach (int[] coord in this.path) {
+                if (Enumerable.SequenceEqual(coord, up)) {
+                    return "up";
+                }
             }
         }
         return "down";
