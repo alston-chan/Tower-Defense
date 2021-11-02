@@ -146,6 +146,20 @@ public class LevelManager : Singleton<LevelManager>
         int[] down = new int[]{x, y + 1};
         int[] left = new int[]{x - 1, y};
         int[] right = new int[]{x + 1, y};
+        if (validTile(up[0], up[1])) {
+            foreach (int[] coord in this.path) {
+                if (Enumerable.SequenceEqual(coord, up)) {
+                    return "up";
+                }
+            }
+        }
+        if (validTile(down[0], down[1])) {
+            foreach (int[] coord in this.path) {
+                if (Enumerable.SequenceEqual(coord, down)) {
+                    return "down";
+                }
+            }
+        }
         if (validTile(left[0], left[1])) {
             foreach (int[] coord in this.path) {
                 if (Enumerable.SequenceEqual(coord, left)) {
@@ -157,20 +171,6 @@ public class LevelManager : Singleton<LevelManager>
             foreach (int[] coord in this.path) {
                 if (Enumerable.SequenceEqual(coord, right)) {
                     return "right";
-                }
-            }
-        }
-        if (validTile(down[0], down[1])) {
-            foreach (int[] coord in this.path) {
-                if (Enumerable.SequenceEqual(coord, down)) {
-                    return "down";
-                }
-            }
-        }
-        if (validTile(up[0], up[1])) {
-            foreach (int[] coord in this.path) {
-                if (Enumerable.SequenceEqual(coord, up)) {
-                    return "up";
                 }
             }
         }

@@ -82,8 +82,8 @@ public class TileScript : MonoBehaviour
             string ogSpriteName = GameManager.Instance.ClickedBtn.TowerPrefab.GetComponent<SpriteRenderer>().name;
             string spriteBaseName = ogSpriteName.Substring(0, ogSpriteName.Length - 1);
             GameObject t = GameManager.Instance.ClickedBtn.TowerPrefab; 
-            Debug.Log(spriteBaseName + ", " + dir);
-            Debug.Log("Before: " + t);
+            // Debug.Log(spriteBaseName + ", " + dir);
+            // Debug.Log("Before: " + t);
             if (spriteBaseName == "Base") {
                 if (dir == "up") {
                     t = Resources.Load("Prefabs/Towers/BaseU") as GameObject;
@@ -115,8 +115,9 @@ public class TileScript : MonoBehaviour
                     t = Resources.Load("Prefabs/Towers/WizardR") as GameObject;
                 }
             }
-            Debug.Log("After: " + t);
+            // Debug.Log("After: " + t);
             GameObject tower = Instantiate(t, WorldPosition, Quaternion.identity);
+            
             //tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y;
 
             tower.transform.SetParent(transform);
