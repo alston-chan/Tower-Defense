@@ -691,10 +691,10 @@ RectTransform:
   m_Father: {fileID: 1773420896}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -0}
-  m_SizeDelta: {x: 200, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &328977529
 MonoBehaviour:
@@ -2040,7 +2040,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1905670588}
   m_HandleRect: {fileID: 1905670587}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2988,8 +2988,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefabs:
-  - {fileID: 8069522953915073528, guid: 265f7f8ecf1567a4688adb2e351da9ef, type: 3}
+  - {fileID: 8069522953915073528, guid: e30e1e16cdffa2a43b49064a16d8ca49, type: 3}
   - {fileID: 788110851935541076, guid: 1ef66d8b7a04c45418c22bd94b08bcd1, type: 3}
+  - {fileID: 8069522953915073528, guid: f90124582d5d8234e9240e1a06c2f15e, type: 3}
+  - {fileID: 8069522953915073528, guid: 265f7f8ecf1567a4688adb2e351da9ef, type: 3}
+  - {fileID: 8069522953915073528, guid: 8f92119d037043845a265d26e31bf696, type: 3}
+  - {fileID: 8069522953915073528, guid: bd4a589dfb7002643a5c970385b85fa7, type: 3}
+  - {fileID: 8069522953915073528, guid: 856bac967058cef4683a8ee627c7176d, type: 3}
   cameraMovement: {fileID: 519420030}
   map: {fileID: 1960596074}
   bluePortalPrefab: {fileID: 8467714456750110529, guid: 160e3932d846ee54da86cab095594d3d,
