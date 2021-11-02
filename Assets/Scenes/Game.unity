@@ -831,7 +831,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Basic Tower
+  m_text: 'Chick
 
 '
   m_isRightToLeft: 0
@@ -1286,7 +1286,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Not Basic Tower
+  m_text: 'Snowball
 
 '
   m_isRightToLeft: 0
@@ -1542,7 +1542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96662053291d2d47a45bc76210b0ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 2067417619492797530, guid: 27170b497d2e8f3458a11c48de335d76,
+  towerPrefab: {fileID: 2067417619492797530, guid: 7917a4ec8bc4b5042bd7e90827ed953f,
     type: 3}
   sprite: {fileID: 21300000, guid: cd792545c444b624cb45b31a2ccf9f27, type: 3}
 --- !u!114 &683825129
@@ -3198,7 +3198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96662053291d2d47a45bc76210b0ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 2067417619492797530, guid: 8c1dce796574a60458c26dea8a3d2e4d,
+  towerPrefab: {fileID: 2067417619492797530, guid: 72a6a48f6ab8a184f9c882723e53a748,
     type: 3}
   sprite: {fileID: 21300000, guid: cd792545c444b624cb45b31a2ccf9f27, type: 3}
 --- !u!114 &1736427399
@@ -3642,7 +3642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Not Basic Tower
+  m_text: 'Wizard
 
 '
   m_isRightToLeft: 0
