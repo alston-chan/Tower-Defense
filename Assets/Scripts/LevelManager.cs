@@ -11,6 +11,8 @@ public class LevelManager : Singleton<LevelManager>
 
     [SerializeField] private Transform map;
 
+    private List<int[]> path;
+
     // Dictionary that contains all the tiles in our game
     public Dictionary<Point, TileScript> Tiles { get; set; }
 
@@ -62,6 +64,18 @@ public class LevelManager : Singleton<LevelManager>
         maxTile = Tiles[new Point(mapX - 1, mapY - 1)].transform.position;
 
         cameraMovement.SetLimits(new Vector3(maxTile.x + TileSize, maxTile.y - TileSize));
+
+        List<int[]> path = new List<int[]>
+        {
+            new int[] {1,0}, new int[] {1,1},new int[] {1,2},new int[] {1,3}, new int[] {1,4}, new int[] {1,5}, new int[] {1,6}, new int[] {2,6}, 
+            new int[] {3,6}, new int[] {3,5}, new int[] {3,4}, new int[] {3,3}, new int[] {3,2}, new int[] {3,1}, new int[] {3,0}, new int[] {4,0}, new int[] {5,0},
+            new int[] {5,1}, new int[] {5,2}, new int[] {5,3}, new int[] {5,4},new int[] {5,5}, new int[] {5,6}, new int[] {6,6},new int[] {7,6},new int[] {7,5}, new int[] {7,4},
+            new int[] {7,3}, new int[] {7,2}, new int[] {7,1}, new int[] {7,0}, new int[] {8,0}, new int[] {9,0},new int[] {10,0},new int[] {10,1},new int[] {10,2}, new int[] {10,3},new int[] 
+            {10,4}, new int[] {10,5},new int[] {10,6},new int[] {11,6}
+
+        };
+
+        this.path = path;
 
         SpawnPortals();
     }
@@ -124,5 +138,40 @@ public class LevelManager : Singleton<LevelManager>
         }
     }
 
-    
+    /** Returns the string of the direction that the tower sprite should
+    be facing when placed on tile X, Y based on the tiles in PATH */
+    public string getDirection(int x, int y) {
+        int[] up = new int[]{x, y + 1};
+        int[] down = new int[]{x, y - 1};
+        int[] left = new int[]{x - 1, y};
+        int[] right = new int[]{x + 1, y};
+        Debug.Log(this.path);
+        if (validTile(up[0], up[1])) {
+            if (this.path.Contains(up)) {
+                return "up";
+            }
+        }
+        if (validTile(down[0], down[1])) {
+            if (this.path.Contains(down)) {
+                return "down";
+            }
+        }
+        if (validTile(left[0], left[1])) {
+            if (this.path.Contains(left)) {
+                return "left";
+            }
+        }
+        if (validTile(right[0], right[1])) {
+            if (this.path.Contains(right)) {
+                return "right";
+            }
+        }
+        return "down";
+    }
+
+    /** Returns a bool that represents the validity of the tile
+    at X, Y */
+    private bool validTile(int x, int y) {
+        return x >= 0 && x < 13 && y >= 0 && y < 7;
+    }
 }

@@ -77,7 +77,45 @@ public class TileScript : MonoBehaviour
     {
         if (GameManager.Instance.BuyTower())  // can only place tower if you can buy it first
         {
-            GameObject tower = Instantiate(GameManager.Instance.ClickedBtn.TowerPrefab, WorldPosition, Quaternion.identity);
+            // Debug.Log(GridPosition.X + ", " + GridPosition.Y);
+            string dir = LevelManager.Instance.getDirection(GridPosition.X, GridPosition.Y);
+            string ogSpriteName = GameManager.Instance.ClickedBtn.TowerPrefab.GetComponent<SpriteRenderer>().name;
+            string spriteBaseName = ogSpriteName.Substring(0, ogSpriteName.Length - 8);
+            GameObject t = GameManager.Instance.ClickedBtn.TowerPrefab; 
+            Debug.Log(spriteBaseName + ", " + dir);
+            if (spriteBaseName == "Base") {
+                if (dir == "up") {
+                    t = (GameObject) Resources.Load("Prefabs/Towers/BaseU");
+                } else if (dir == "down") {
+                    t = (GameObject) Resources.Load("Prefabs/Towers/BaseD");
+                } else if (dir == "left") {
+                    t = (GameObject) Resources.Load("Prefabs/Towers/BaseL");
+                } else {
+                    t = (GameObject) Resources.Load("Prefabs/Towers/BaseR");
+                }
+            } else if (spriteBaseName == "SBL") {
+                if (dir == "up") {
+                    t = (GameObject) Resources.Load("Prefabs/Towers/SBLU");
+                } else if (dir == "down") {
+                    t = (GameObject) Resources.Load("Prefabs/Towers/SBLD");
+                } else if (dir == "left") {
+                    t = (GameObject) Resources.Load("Prefabs/Towers/SBLL");
+                } else {
+                    t = (GameObject) Resources.Load("Prefabs/Towers/SBLR");
+                }
+            } else if (spriteBaseName == "Wizard") {
+                if (dir == "up") {
+                    t = (GameObject) Resources.Load("Prefabs/Towers/WizardU");
+                } else if (dir == "down") {
+                    t = (GameObject) Resources.Load("Prefabs/Towers/WizardD");
+                } else if (dir == "left") {
+                    t = (GameObject) Resources.Load("Prefabs/Towers/WizardL");
+                } else {
+                    t = (GameObject) Resources.Load("Prefabs/Towers/WizardR");
+                }
+            }
+
+            GameObject tower = Instantiate(t, WorldPosition, Quaternion.identity);
             //tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y;
 
             tower.transform.SetParent(transform);
