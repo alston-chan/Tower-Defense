@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 3319013783216917819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 4758974871982465540}
   m_RootOrder: 1
@@ -208,7 +208,7 @@ MonoBehaviour:
   upgradeAttackCooldown: 0.05
   upgradePrice: 50
   upgradeMax: 3
-  projectileSpeed: 10
+  projectileSpeed: 15
 --- !u!1 &8321656080242473959
 GameObject:
   m_ObjectHideFlags: 0

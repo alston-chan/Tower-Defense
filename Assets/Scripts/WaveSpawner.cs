@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
 public class Wave
@@ -23,11 +24,15 @@ public class WaveSpawner : Singleton<WaveSpawner>
     private float nextSpawnTime;
     private bool canSpawn = true;
 
+    public TMP_Text waveText;
+
     public ObjectPool Pool { get; set; }
 
     private void Awake()
     {
         Pool = GetComponent<ObjectPool>();
+
+        waveText.text = "Wave: " + (currentWaveNumber + 1) + " / " + waves.Length;
     }
 
 
@@ -51,6 +56,8 @@ public class WaveSpawner : Singleton<WaveSpawner>
     {
         currentWaveNumber ++;
         canSpawn = true;
+
+        waveText.text = "Wave: " + (currentWaveNumber + 1) + " / " + waves.Length;
     }
 
     private IEnumerator SpawnWave()
