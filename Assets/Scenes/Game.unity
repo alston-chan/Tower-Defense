@@ -2766,6 +2766,7 @@ GameObject:
   - component: {fileID: 1156662397}
   - component: {fileID: 1156662399}
   - component: {fileID: 1156662400}
+  - component: {fileID: 1156662401}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2831,6 +2832,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingFish: 500
+--- !u!114 &1156662401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156662396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5802503cf86444eaa7c89ef8924938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - waveName: 1
+    monsterCount: 2
+    monsterType:
+    - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
+    spawnInterval: 1
+  - waveName: 2
+    monsterCount: 2
+    monsterType:
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    spawnInterval: 1
+  - waveName: 3
+    monsterCount: 4
+    monsterType:
+    - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
+    spawnInterval: 1
+  - waveName: 4
+    monsterCount: 4
+    monsterType:
+    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
+    spawnInterval: 1
 --- !u!1 &1364092272
 GameObject:
   m_ObjectHideFlags: 0
