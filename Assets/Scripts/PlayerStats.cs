@@ -19,4 +19,9 @@ public class PlayerStats : MonoBehaviour
         // Money = startingMoney;
         // Lives = startingLives;
     }
+
+    /* This doesn't work but idk why */
+    public bool enoughFish(int cost) {
+        return Fish >= cost;
+    }
 }

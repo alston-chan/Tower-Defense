@@ -37,16 +37,15 @@ public class GameManager : Singleton<GameManager>
 
     public bool BuyTower()
     {
-        // int tower_cost = selectedTower.price;  // pass in tower cost once implemented
-        int tower_cost = 100;
-        if (PlayerStats.Fish >= tower_cost)  // do nothing if can't afford tower
+        int tower_cost = ClickedBtn.towerPrefab.GetComponentInChildren<Tower>().price;
+        if (PlayerStats.Fish >= tower_cost)
         {
             PlayerStats.Fish -= tower_cost;  // TESTING: every time a tower is placed, 100 fish (currency) will be subtracted.
             return true;
         } else return false;
     }
 
-    public void SelectTower(Tower tower)
+    public void SelectTower(Tower tower)  // click on tower after it is already placed
     {
         if (selectedTower != null)
             selectedTower.Select();
@@ -65,9 +64,19 @@ public class GameManager : Singleton<GameManager>
         selectedTower = null;
     }
 
-    public void UpgradeTower()
+    public void UpgradeDamage()
     {
-    
+        selectedTower.Upgrade(0);
+    }
+
+    public void UpgradeAttackCooldown() 
+    {
+        selectedTower.Upgrade(1);
+    }
+
+    public void UpgradeCamo() 
+    {
+        selectedTower.Upgrade(2);
     }
 
     private void HandleEscape()

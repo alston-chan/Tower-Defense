@@ -22,15 +22,21 @@ public abstract class Tower : MonoBehaviour
 
     public TowerType TypeOfTower { get; protected set; }
 
-    public TowerUpgrade[] Upgrades { get; protected set; }
-
-    private int damage;
+    [SerializeField] private int damage;
     public float accuracy;
     private System.Random rand = new System.Random();
-    private bool canSeeCamo;
-    private int upgradeDamage;
-    private float upgradeAccuracy;
+    [SerializeField] private bool canSeeCamo;
+    [SerializeField] private int upgradeDamage;
+    [SerializeField] private float upgradeAccuracy;
     public int price;
+
+    [SerializeField] private float upgradeAttackCooldown;
+
+    [SerializeField] private int upgradePrice;
+
+    [SerializeField] private int upgradeMax = 3;
+
+    private int upgradeCounter = 0;
 
     [SerializeField] private float projectileSpeed;
     public float ProjectileSpeed { get { return projectileSpeed; } }
@@ -47,11 +53,21 @@ public abstract class Tower : MonoBehaviour
         Attack();
     }
 
-    void Upgrade(int path) {
-      if (path == 0) {
-        damage += upgradeDamage;
-      } else {
-        accuracy += upgradeAccuracy;
+    public void Upgrade(int path) {
+      if (upgradeCounter < upgradeMax && PlayerStats.Fish >= upgradePrice) {
+        if (path == 0) {
+            damage += upgradeDamage;
+            PlayerStats.Fish -= upgradePrice;
+        } else if (path == 1) {
+            attackCooldown -= upgradeAttackCooldown;
+            PlayerStats.Fish -= upgradePrice;
+        } else {
+            if (canSeeCamo != true) {
+                canSeeCamo = true;
+                PlayerStats.Fish -= upgradePrice;            
+            }
+        }
+        upgradeCounter += 1;          
       }
     }
 
@@ -93,7 +109,7 @@ public abstract class Tower : MonoBehaviour
 
         projectile.transform.position = transform.position;
 
-        projectile.Initialize(this);
+        projectile.Initialize(this, damage);
     }
 
     public void Select()
