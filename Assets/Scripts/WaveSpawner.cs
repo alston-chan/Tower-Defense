@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Wave
@@ -25,6 +26,7 @@ public class WaveSpawner : Singleton<WaveSpawner>
     private bool canSpawn = true;
 
     public TMP_Text waveText;
+    public Slider slide;
 
     public ObjectPool Pool { get; set; }
 
@@ -33,6 +35,7 @@ public class WaveSpawner : Singleton<WaveSpawner>
         Pool = GetComponent<ObjectPool>();
 
         waveText.text = "Wave: " + (currentWaveNumber + 1) + " / " + waves.Length;
+        slide.value = 0;
     }
 
 
@@ -58,6 +61,7 @@ public class WaveSpawner : Singleton<WaveSpawner>
         canSpawn = true;
 
         waveText.text = "Wave: " + (currentWaveNumber + 1) + " / " + waves.Length;
+        slide.value = (float) (currentWaveNumber + 1) / waves.Length;
     }
 
     private IEnumerator SpawnWave()
