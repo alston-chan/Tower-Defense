@@ -136,4 +136,19 @@ public abstract class Tower : MonoBehaviour
             target = null;
         }
     }
+
+    public class Stats {
+        public int Damage { get; set; }
+        public float AttackCooldown { get; set; }
+        public bool CanSeeCamo { get; set; }
+        public Stats(int dmg, float ac, bool csc) {
+            Damage = dmg;
+            AttackCooldown = ac;
+            CanSeeCamo = csc;
+        }
+    }
+
+    public Stats GetStats() {
+        return new Stats(damage, attackCooldown, canSeeCamo);
+    }
 }
