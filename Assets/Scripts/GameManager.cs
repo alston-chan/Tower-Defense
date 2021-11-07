@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -11,12 +10,7 @@ public class GameManager : Singleton<GameManager>
 
     private Tower selectedTower;
 
-    
-    [SerializeField]
-    private GameObject statsPanel;
-    
-    [SerializeField]
-    private Text statText;
+
 
     private void Awake()
     {
@@ -91,14 +85,6 @@ public class GameManager : Singleton<GameManager>
         {
             Hover.Instance.Deactivate();
         }
-    }
-
-    public void ShowStats() {
-        statsPanel.SetActive(!statsPanel.activeSelf);
-    }
-
-    public void SetToolTipText(string txt) {
-        statText.text = txt;
     }
 
     // public void StartWave()

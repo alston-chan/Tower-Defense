@@ -22,26 +22,4 @@ public class TowerBtn : MonoBehaviour
     {
         
     }
-
-    public void ShowInfo(string type) {
-
-        string tooltip = string.Empty;
-
-        switch (type) {
-            case "Chick":
-                
-                tooltip = string.Format("<b>Chick</b>\nDamage: {0} \nAttack Speed: {1} \nCamo Detection: {2} \nDescription: {3}",
-                    1,1,1, "test");
-                break;
-            case "Snowball":
-                tooltip = string.Format("<b>Snowball</b>");
-                break;
-            case "Wizard":
-                tooltip = string.Format("<b>Wizard</b>");
-                break;
-        }
-
-        GameManager.Instance.SetToolTipText(tooltip);
-        GameManager.Instance.ShowStats();
-    }
 }
