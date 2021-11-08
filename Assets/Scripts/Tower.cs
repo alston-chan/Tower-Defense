@@ -53,7 +53,7 @@ public abstract class Tower : MonoBehaviour
         Attack();
     }
 
-    public void Upgrade(int path) {
+    public void Upgrade(int path, int x, int y) {
         if (upgradeCounter < upgradeMax && PlayerStats.Fish >= upgradePrice) {
         if (path == 0) {
             damage += upgradeDamage;
@@ -70,8 +70,8 @@ public abstract class Tower : MonoBehaviour
         upgradeCounter += 1;          
         }
 
-        Debug.Log(upgradeCounter);
-        Debug.Log(upgradeMax);
+        // Debug.Log(upgradeCounter);
+        // Debug.Log(upgradeMax);
 
         // For updating the art at the final upgrade
         SpriteRenderer parentSpR = transform.parent.GetComponent<SpriteRenderer>();
@@ -80,17 +80,17 @@ public abstract class Tower : MonoBehaviour
             string ogSpriteName = parentSpR.name;
             string spriteBaseName = ogSpriteName.Substring(0, ogSpriteName.Length - 8);
             Debug.Log(ogSpriteName);
-            string dir = ogSpriteName[ogSpriteName.Length - 8].ToString();
+            string dir = LevelManager.Instance.getDirection(x, y);
             Debug.Log(dir);
             if (spriteBaseName == "SBL") {
-                if (dir == "U") {
-                    parentSp = Resources.Load("Sprites/Towers/RLU") as Sprite;
-                } else if (dir == "D") {
-                    parentSp = Resources.Load("Sprites/Towers/RLD") as Sprite;
-                } else if (dir == "L") {
-                    parentSp = Resources.Load("Sprites/Towers/RLL") as Sprite;
+                if (dir == "up") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLU");
+                } else if (dir == "down") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLD");
+                } else if (dir == "left") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLL");
                 } else {
-                    parentSp = Resources.Load("Sprites/Towers/RLR") as Sprite;
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLR");
                 }
             }
         }

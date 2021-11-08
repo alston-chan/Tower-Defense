@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
+    public Point GridPosition { get; private set; }
+
     public TowerBtn ClickedBtn { get; set; }
 
     public ObjectPool Pool { get; set; }
@@ -71,17 +73,17 @@ public class GameManager : Singleton<GameManager>
 
     public void UpgradeDamage()
     {
-        selectedTower.Upgrade(0);
+        selectedTower.Upgrade(0, GridPosition.X, GridPosition.Y);
     }
 
     public void UpgradeAttackCooldown() 
     {
-        selectedTower.Upgrade(1);
+        selectedTower.Upgrade(1, GridPosition.X, GridPosition.Y);
     }
 
     public void UpgradeCamo() 
     {
-        selectedTower.Upgrade(2);
+        selectedTower.Upgrade(2, GridPosition.X, GridPosition.Y);
     }
 
     private void HandleEscape()
@@ -92,13 +94,13 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    // public void ShowStats() {
-    //     statsPanel.SetActive(!statsPanel.activeSelf);
-    // }
+    public void ShowStats() {
+        statsPanel.SetActive(!statsPanel.activeSelf);
+    }
 
-    // public void SetTooltipText(string txt) {
-    //     statsText.text = txt;
-    // }
+    public void SetTooltipText(string txt) {
+        statsText.text = txt;
+    }
 
     // public void StartWave()
     // {

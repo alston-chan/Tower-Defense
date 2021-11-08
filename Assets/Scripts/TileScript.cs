@@ -82,42 +82,40 @@ public class TileScript : MonoBehaviour
             string dir = LevelManager.Instance.getDirection(GridPosition.X, GridPosition.Y);
             string ogSpriteName = t.GetComponent<SpriteRenderer>().sprite.name;
             string spriteBaseName = ogSpriteName.Substring(0, ogSpriteName.Length - 1);
-            Sprite tSp = GameManager.Instance.ClickedBtn.Sprite;
-            Debug.Log(spriteBaseName + ", " + dir);
-            Debug.Log("Before: " + tSp);
+            // Debug.Log(spriteBaseName + ", " + dir);
+            // Debug.Log("Before: " + t);
             if (spriteBaseName == "Base") {
                 if (dir == "up") {
-                    tSp = Resources.Load("Sprites/Towers/BaseU") as Sprite;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/BaseU");
                 } else if (dir == "down") {
-                    tSp = Resources.Load("Sprites/Towers/BaseD") as Sprite;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/BaseD");
                 } else if (dir == "left") {
-                    tSp = Resources.Load("Sprites/Towers/BaseL") as Sprite;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/BaseL");
                 } else {
-                    tSp = Resources.Load("Sprites/Towers/BaseR") as Sprite;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/BaseR");
                 }
             } else if (spriteBaseName == "SBL") {
                 if (dir == "up") {
-                    tSp = Resources.Load("Sprites/Towers/SBLU") as Sprite;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/SBLU");
                 } else if (dir == "down") {
-                    tSp = Resources.Load("Sprites/Towers/SBLD") as Sprite;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/SBLD");
                 } else if (dir == "left") {
-                    Debug.Log(Resources.Load("Sprites/Towers/SBLL") as Sprite);
-                    tSp = Resources.Load("Sprites/Towers/SBLL") as Sprite;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/SBLL");
                 } else {
-                    tSp = Resources.Load("Sprites/Towers/SBLR") as Sprite;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/SBLR");
                 }
             } else if (spriteBaseName == "Wizard") {
                 if (dir == "up") {
-                    tSp = Resources.Load("Sprites/Towers/WizardU") as Sprite;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WizardU");
                 } else if (dir == "down") {
-                    tSp = Resources.Load("Sprites/Towers/WizardD") as Sprite;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WizardD");
                 } else if (dir == "left") {
-                    tSp = Resources.Load("Sprites/Towers/WizardL") as Sprite;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WizardL");
                 } else {
-                    tSp = Resources.Load("Sprites/Towers/WizardR") as Sprite;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WizardR");
                 }
             }
-            Debug.Log("After: " + tSp);
+            // Debug.Log("After: " + t);
             GameObject tower = Instantiate(t, WorldPosition, Quaternion.identity);
             
             //tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y;

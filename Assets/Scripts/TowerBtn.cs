@@ -23,24 +23,24 @@ public class TowerBtn : MonoBehaviour
         
     }
 
-    // public void ShowInfo(string type) {
-    //     string tooltip = string.Empty;
+    public void ShowInfo(string type) {
+        string tooltip = string.Empty;
 
-    //     switch (type) {
-    //         case "Chick":
-    //             Tower t = towerPrefab.GetComponentInChildren<Tower>();
-    //             tooltip = string.Format("<b>Chick</b> \nDamage: {0} \nAttack Speed: {1} \nCamo Detection: {2} \nDescription: {3}", 
-    //                 t.GetStats().Damage, t.GetStats().AttackCooldown, t.GetStats().CanSeeCamo, "Basic Tower");
-    //             break;
-    //         case "Snowball":
-    //             tooltip = string.Format("<b>Snowball</b>");
-    //             break;
-    //         case "Wizard":
-    //             tooltip = string.Format("<b>Wizard</b>");
-    //             break;
-    //     }
+        switch (type) {
+            case "Chick":
+                Tower t = towerPrefab.GetComponentInChildren<Tower>();
+                tooltip = string.Format("<b>Chick</b> \nDamage: {0} \nAttack Speed: {1} \nCamo Detection: {2} \nDescription: {3}", 
+                    t.GetStats().Damage, t.GetStats().AttackCooldown, t.GetStats().CanSeeCamo, "Basic Tower");
+                break;
+            case "Snowball":
+                tooltip = string.Format("<b>Snowball</b>");
+                break;
+            case "Wizard":
+                tooltip = string.Format("<b>Wizard</b>");
+                break;
+        }
 
-    //     GameManager.Instance.SetTooltipText(tooltip);
-    //     GameManager.Instance.ShowStats();
-    // }
+        GameManager.Instance.SetTooltipText(tooltip);
+        GameManager.Instance.ShowStats();
+    }
 }
