@@ -54,7 +54,7 @@ public abstract class Tower : MonoBehaviour
     }
 
     public void Upgrade(int path) {
-      if (upgradeCounter < upgradeMax && PlayerStats.Fish >= upgradePrice) {
+        if (upgradeCounter < upgradeMax && PlayerStats.Fish >= upgradePrice) {
         if (path == 0) {
             damage += upgradeDamage;
             PlayerStats.Fish -= upgradePrice;
@@ -68,7 +68,33 @@ public abstract class Tower : MonoBehaviour
             }
         }
         upgradeCounter += 1;          
-      }
+        }
+
+        Debug.Log(upgradeCounter);
+        Debug.Log(upgradeMax);
+
+        // For updating the art at the final upgrade
+        SpriteRenderer parentSp = transform.parent.GetComponent<SpriteRenderer>();
+        if (upgradeCounter == upgradeMax) {
+            string ogSpriteName = parentSp.name;
+            string spriteBaseName = ogSpriteName.Substring(0, ogSpriteName.Length - 8);
+            Debug.Log(ogSpriteName);
+            string dir = ogSpriteName[ogSpriteName.Length - 8].ToString();
+            Debug.Log(dir);
+            GameObject t = Resources.Load("Prefabs/Towers/SBLL") as GameObject;
+            if (spriteBaseName == "SBL") {
+                if (dir == "U") {
+                    t = Resources.Load("Prefabs/Towers/RLU") as GameObject;
+                } else if (dir == "D") {
+                    t = Resources.Load("Prefabs/Towers/RLD") as GameObject;
+                } else if (dir == "L") {
+                    t = Resources.Load("Prefabs/Towers/RLL") as GameObject;
+                } else {
+                    t = Resources.Load("Prefabs/Towers/RLR") as GameObject;
+                }
+            parentSp.sprite = t.GetComponent<SpriteRenderer>().sprite;
+            }
+        }
     }
 
     private void Attack()

@@ -78,10 +78,11 @@ public class TileScript : MonoBehaviour
         if (GameManager.Instance.BuyTower())  // can only place tower if you can buy it first
         {
             // Debug.Log(GridPosition.X + ", " + GridPosition.Y);
-            string dir = LevelManager.Instance.getDirection(GridPosition.X, GridPosition.Y);
-            string ogSpriteName = GameManager.Instance.ClickedBtn.TowerPrefab.GetComponent<SpriteRenderer>().name;
-            string spriteBaseName = ogSpriteName.Substring(0, ogSpriteName.Length - 1);
             GameObject t = GameManager.Instance.ClickedBtn.TowerPrefab; 
+            string dir = LevelManager.Instance.getDirection(GridPosition.X, GridPosition.Y);
+            string ogSpriteName = t.GetComponent<SpriteRenderer>().sprite.name;
+            string spriteBaseName = ogSpriteName.Substring(0, ogSpriteName.Length - 1);
+            sprite tSp = t.GetComponent<SpriteRenderer>().sprite;
             // Debug.Log(spriteBaseName + ", " + dir);
             // Debug.Log("Before: " + t);
             if (spriteBaseName == "Base") {

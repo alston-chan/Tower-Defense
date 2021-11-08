@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4758974871982465540}
   - component: {fileID: 623540888987655360}
   m_Layer: 0
-  m_Name: BaseL
+  m_Name: RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b3d6fc7141d8b48489bfd48a36d3f9f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 011175aa519456247b64d15103901c84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
   upgradeAttackCooldown: 0.05
   upgradePrice: 50
   upgradeMax: 3
-  projectileSpeed: 10
+  projectileSpeed: 15
 --- !u!1 &8321656080242473959
 GameObject:
   m_ObjectHideFlags: 0
