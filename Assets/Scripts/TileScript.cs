@@ -19,6 +19,7 @@ public class TileScript : MonoBehaviour
 
     private Tower myTower;
 
+    public bool IsPath = false;
     private Color32 fullColor = new Color32(255, 118, 118, 255);
     private Color32 emptyColor = new Color32(96, 255, 90, 255);
 
@@ -43,7 +44,7 @@ public class TileScript : MonoBehaviour
         // Check to see if mouse is clicking a button or if player has clicked buy button
         if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn != null)
         {
-            if (IsEmpty)
+            if (IsEmpty && IsPath == false)
             {
                 ColorTile(emptyColor);
 
@@ -75,7 +76,7 @@ public class TileScript : MonoBehaviour
 
     private void PlaceTower()
     {
-        if (GameManager.Instance.BuyTower())  // can only place tower if you can buy it first
+        if (GameManager.Instance.BuyTower() && IsPath == false)  // can only place tower if you can buy it first
         {
             // Debug.Log(GridPosition.X + ", " + GridPosition.Y);
             string dir = LevelManager.Instance.getDirection(GridPosition.X, GridPosition.Y);
