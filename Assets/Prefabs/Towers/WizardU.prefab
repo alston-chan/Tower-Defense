@@ -204,7 +204,7 @@ MonoBehaviour:
   canSeeCamo: 1
   upgradeDamage: 2
   upgradeAccuracy: 0.1
-  price: 100
+  price: 125
   upgradeAttackCooldown: 0.05
   upgradePrice: 50
   upgradeMax: 3
