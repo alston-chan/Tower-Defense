@@ -137,13 +137,13 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public void ShowStats() {
-        statsPanel.SetActive(!statsPanel.activeSelf);
-    }
+    // public void ShowStats() {
+    //     statsPanel.SetActive(!statsPanel.activeSelf);
+    // }
 
-    public void SetTooltipText(string txt) {
-        statsText.text = txt;
-    }
+    // public void SetTooltipText(string txt) {
+    //     statsText.text = txt;
+    // }
 
     // public void StartWave()
     // {
