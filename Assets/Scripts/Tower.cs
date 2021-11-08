@@ -74,25 +74,24 @@ public abstract class Tower : MonoBehaviour
         Debug.Log(upgradeMax);
 
         // For updating the art at the final upgrade
-        SpriteRenderer parentSp = transform.parent.GetComponent<SpriteRenderer>();
+        SpriteRenderer parentSpR = transform.parent.GetComponent<SpriteRenderer>();
+        Sprite parentSp = transform.parent.GetComponent<SpriteRenderer>().sprite;
         if (upgradeCounter == upgradeMax) {
-            string ogSpriteName = parentSp.name;
+            string ogSpriteName = parentSpR.name;
             string spriteBaseName = ogSpriteName.Substring(0, ogSpriteName.Length - 8);
             Debug.Log(ogSpriteName);
             string dir = ogSpriteName[ogSpriteName.Length - 8].ToString();
             Debug.Log(dir);
-            GameObject t = Resources.Load("Prefabs/Towers/SBLL") as GameObject;
             if (spriteBaseName == "SBL") {
                 if (dir == "U") {
-                    t = Resources.Load("Prefabs/Towers/RLU") as GameObject;
+                    parentSp = Resources.Load("Sprites/Towers/RLU") as Sprite;
                 } else if (dir == "D") {
-                    t = Resources.Load("Prefabs/Towers/RLD") as GameObject;
+                    parentSp = Resources.Load("Sprites/Towers/RLD") as Sprite;
                 } else if (dir == "L") {
-                    t = Resources.Load("Prefabs/Towers/RLL") as GameObject;
+                    parentSp = Resources.Load("Sprites/Towers/RLL") as Sprite;
                 } else {
-                    t = Resources.Load("Prefabs/Towers/RLR") as GameObject;
+                    parentSp = Resources.Load("Sprites/Towers/RLR") as Sprite;
                 }
-            parentSp.sprite = t.GetComponent<SpriteRenderer>().sprite;
             }
         }
     }
