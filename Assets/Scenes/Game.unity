@@ -692,10 +692,10 @@ RectTransform:
   m_Father: {fileID: 1773420896}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -0}
+  m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &328977529
 MonoBehaviour:
@@ -3124,7 +3124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172afc6745dd2eb488fff8ab65be1fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingFish: 500
+  startingFish: 160
 --- !u!114 &1156662401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3138,69 +3138,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - waveName: 1
-    monsterCount: 2
+  - waveName: Dummy
+    monsterCount: 1
     monsterType:
     - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
     spawnInterval: 1
-  - waveName: 2
-    monsterCount: 2
-    monsterType:
-    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
-    spawnInterval: 1
-  - waveName: 3
-    monsterCount: 4
-    monsterType:
-    - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
-    spawnInterval: 1
-  - waveName: 4
-    monsterCount: 4
-    monsterType:
-    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
-    spawnInterval: 1
-  - waveName: 5
-    monsterCount: 5
-    monsterType:
-    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
-    spawnInterval: 0.5
-  - waveName: 6
-    monsterCount: 5
-    monsterType:
-    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
-    - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
-    spawnInterval: 1
-  - waveName: 7
+  - waveName: Basic Rush
     monsterCount: 10
     monsterType:
     - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
-    - {fileID: 0}
-    spawnInterval: 0.5
-  - waveName: 8
-    monsterCount: 10
+    spawnInterval: 1
+  - waveName: Basic Rush 2
+    monsterCount: 20
+    monsterType:
+    - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
+    spawnInterval: 0.3
+  - waveName: Runner Rush
+    monsterCount: 15
     monsterType:
     - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
-    spawnInterval: 0.25
-  - waveName: 9
+    spawnInterval: 0.3
+  - waveName: Runner + Basic Rush
+    monsterCount: 30
+    monsterType:
+    - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    spawnInterval: 0.3
+  - waveName: Sneak Warning
+    monsterCount: 1
+    monsterType:
+    - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
+    spawnInterval: 1
+  - waveName: Tank + Basic Rush
+    monsterCount: 20
+    monsterType:
+    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
+    - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
+    spawnInterval: 0.5
+  - waveName: Sneak Rush
     monsterCount: 25
     monsterType:
-    - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
+    - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
     spawnInterval: 0.25
-  - waveName: 10
-    monsterCount: 100
+  - waveName: Sneak + Tank + Runner Rush
+    monsterCount: 30
     monsterType:
-    - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
-    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
     - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
     - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
-    spawnInterval: 0.25
-  - waveName: 11
-    monsterCount: 200
-    monsterType:
-    - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
     - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
-    - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
-    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
-    spawnInterval: 0.15
+    spawnInterval: 0.25
   waveText: {fileID: 2022217769}
   slide: {fileID: 410885032}
 --- !u!1 &1364092272

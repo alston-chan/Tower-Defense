@@ -120,14 +120,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   health: 5
-  health: 0
   armor: 0
   dodge: 0
   isCamo: 0
   speed: 2
-  destination: {x: -6.8864384, y: 4.3333335, z: 0}
-  bounty: 10
-  lives_damage: 1
+  bounty: 5
+  lives_damage: 2
   destination: {x: 0, y: 0, z: 0}
 --- !u!60 &3028410879114121497
 PolygonCollider2D:
