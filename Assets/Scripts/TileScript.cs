@@ -136,6 +136,15 @@ public class TileScript : MonoBehaviour
         
     }
 
+    private void SellTower()
+    {
+        GameManager.Instance.SellTower();
+        myTower = null;
+        this.myTower = null;
+        IsEmpty = true;
+        ColorTile(emptyColor);
+    }
+
     private void ColorTile(Color newColor)
     {
         spriteRenderer.color = newColor;

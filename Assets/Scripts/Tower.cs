@@ -71,6 +71,12 @@ public abstract class Tower : MonoBehaviour
       }
     }
 
+    public void Sell() {
+        double sell_price = .7 * price;
+        PlayerStats.Fish += (int) sell_price;
+        Destroy(this.gameObject);
+    }
+
     private void Attack()
     {
         if (!canAttack)
