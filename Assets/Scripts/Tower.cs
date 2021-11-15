@@ -144,10 +144,12 @@ public abstract class Tower : MonoBehaviour
     }
 
     public class Stats {
+        public int Price { get; set; }
         public int Damage { get; set; }
         public float AttackCooldown { get; set; }
         public bool CanSeeCamo { get; set; }
-        public Stats(int dmg, float ac, bool csc) {
+        public Stats(int price, int dmg, float ac, bool csc) {
+            Price = price;
             Damage = dmg;
             AttackCooldown = ac;
             CanSeeCamo = csc;
@@ -155,6 +157,6 @@ public abstract class Tower : MonoBehaviour
     }
 
     public Stats GetStats() {
-        return new Stats(damage, attackCooldown, canSeeCamo);
+        return new Stats(price, damage, attackCooldown, canSeeCamo);
     }
 }
