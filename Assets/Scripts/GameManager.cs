@@ -17,6 +17,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private Text statsText;
 
+    [SerializeField]
+    private GameObject upgradePanel;
+
     private void Awake()
     {
         Pool = GetComponent<ObjectPool>();
@@ -57,6 +60,8 @@ public class GameManager : Singleton<GameManager>
 
         selectedTower = tower;
         selectedTower.Select();
+        upgradePanel.SetActive(true);
+        
     }
 
     public void DeselectTower()
@@ -67,6 +72,7 @@ public class GameManager : Singleton<GameManager>
         }
 
         selectedTower = null;
+        upgradePanel.SetActive(false);
     }
 
     public void UpgradeDamage()
