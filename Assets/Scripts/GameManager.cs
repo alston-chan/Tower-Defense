@@ -19,6 +19,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     private Text statsText;
 
+    [SerializeField]
+    private GameObject upgradePanel;
+
     private void Awake()
     {
         Pool = GetComponent<ObjectPool>();
@@ -68,6 +71,8 @@ public class GameManager : Singleton<GameManager>
                     selectedTower.GetStats().Price, selectedTower.GetStats().Damage, selectedTower.GetStats().AttackCooldown, selectedTower.GetStats().CanSeeCamo, "");
         GameManager.Instance.SetTooltipText(tooltip);
         GameManager.Instance.ShowStats();   
+        upgradePanel.SetActive(true);
+        
     }
 
     public void DeselectTower()
@@ -98,6 +103,7 @@ public class GameManager : Singleton<GameManager>
 
             GameManager.Instance.SetTooltipText(tooltip); 
         }
+        upgradePanel.SetActive(false);
     }
 
     public void UpgradeDamage()
