@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public enum TowerType {BASIC, NOTSOBASIC}
+public enum TowerType {BASIC, NOTSOBASIC, WIZARD}
 
 public abstract class Tower : MonoBehaviour
 {
@@ -152,15 +152,20 @@ public abstract class Tower : MonoBehaviour
         public int Damage { get; set; }
         public float AttackCooldown { get; set; }
         public bool CanSeeCamo { get; set; }
-        public Stats(int price, int dmg, float ac, bool csc) {
+        public int UpgradeDamage { get; set; }
+        public float UpgradeAttackCooldown { get; set; }
+        public bool UpgradeCamo { get; set; }
+        public Stats(int price, int dmg, float ac, bool csc, int ud, float uac) {
             Price = price;
             Damage = dmg;
             AttackCooldown = ac;
             CanSeeCamo = csc;
+            UpgradeDamage = ud;
+            UpgradeAttackCooldown = uac;
         }
     }
 
     public Stats GetStats() {
-        return new Stats(price, damage, attackCooldown, canSeeCamo);
+        return new Stats(price, damage, attackCooldown, canSeeCamo, upgradeDamage, upgradeAttackCooldown);
     }
 }

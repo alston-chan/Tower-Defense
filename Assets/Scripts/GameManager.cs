@@ -7,6 +7,8 @@ public class GameManager : Singleton<GameManager>
 {
     public TowerBtn ClickedBtn { get; set; }
 
+    public UpgradeBtn HoveredBtn { get; set; }
+
     public ObjectPool Pool { get; set; }
 
     private Tower selectedTower;
@@ -50,6 +52,10 @@ public class GameManager : Singleton<GameManager>
         } else return false;
     }
 
+    public Tower getSelectedTower() {
+        return selectedTower;
+    }
+
     public void SelectTower(Tower tower)  // click on tower after it is already placed
     {
         if (selectedTower != null)
@@ -57,6 +63,11 @@ public class GameManager : Singleton<GameManager>
 
         selectedTower = tower;
         selectedTower.Select();
+        string tooltip = string.Empty;
+        tooltip = string.Format("Price: {0} \nDamage: {1} \nAttack Speed: {2} \nCamo Detection: {3} \nDescription: {4}", 
+                    selectedTower.GetStats().Price, selectedTower.GetStats().Damage, selectedTower.GetStats().AttackCooldown, selectedTower.GetStats().CanSeeCamo, "");
+        GameManager.Instance.SetTooltipText(tooltip);
+        GameManager.Instance.ShowStats();   
     }
 
     public void DeselectTower()
@@ -67,11 +78,33 @@ public class GameManager : Singleton<GameManager>
         }
 
         selectedTower = null;
+        GameManager.Instance.ShowStats(); 
+    }
+
+    public void UpgradeToolTips(string type) {
+        if (selectedTower != null) {
+            string tooltip = string.Empty;
+            switch (type) {
+                case "Damage":
+                    tooltip = string.Format("Damage Upgrade: {0}", selectedTower.GetStats().UpgradeDamage);
+                    break;
+                case "AttackSpeed":
+                    tooltip = string.Format("Attack Cooldown Upgrade: {0}", selectedTower.GetStats().UpgradeAttackCooldown);
+                    break;
+                case "Camo":
+                    tooltip = "Allows tower to see camo";
+                    break;
+            }
+
+            GameManager.Instance.SetTooltipText(tooltip); 
+        }
     }
 
     public void UpgradeDamage()
     {
         selectedTower.Upgrade(0);
+        SelectTower(selectedTower);
+        GameManager.Instance.ShowStats();
     }
 
     public void UpgradeAttackCooldown() 
