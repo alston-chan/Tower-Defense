@@ -83,7 +83,8 @@ public class GameManager : Singleton<GameManager>
         }
 
         selectedTower = null;
-        GameManager.Instance.ShowStats(); 
+        GameManager.Instance.ShowStats();
+        upgradePanel.SetActive(false); 
     }
 
     public void UpgradeToolTips(string type) {
