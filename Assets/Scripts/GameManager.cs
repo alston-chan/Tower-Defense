@@ -126,6 +126,7 @@ public class GameManager : Singleton<GameManager>
     public void SellTower()
     {
         selectedTower.Sell();
+        upgradePanel.SetActive(false);
     }
 
     private void HandleEscape()
