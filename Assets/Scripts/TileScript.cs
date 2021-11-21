@@ -15,9 +15,10 @@ public class TileScript : MonoBehaviour
         }
     }
 
-    public bool IsEmpty { get; private set; }
+    public bool IsEmpty { get; set; }
 
-    private Tower myTower;
+    public Tower myTower;
+    public GameObject tower;
 
     public bool IsPath = false;
     private Color32 fullColor = new Color32(255, 118, 118, 255);
@@ -65,6 +66,14 @@ public class TileScript : MonoBehaviour
             else
             {
                 GameManager.Instance.DeselectTower();
+            }
+        }
+        else if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn == null && Input.inputString == "\b")
+        {
+            if (myTower != null)
+            {
+                GameManager.Instance.SelectTower(myTower);
+                SellTower();
             }
         }
     }
@@ -117,7 +126,7 @@ public class TileScript : MonoBehaviour
                 }
             }
             // Debug.Log("After: " + t);
-            GameObject tower = Instantiate(t, WorldPosition, Quaternion.identity);
+            tower = Instantiate(t, WorldPosition, Quaternion.identity);
             
             //tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y;
 
@@ -129,6 +138,8 @@ public class TileScript : MonoBehaviour
 
             ColorTile(Color.white);
 
+            this.myTower.tile = this;
+
             Hover.Instance.Deactivate();
         }
         
@@ -139,10 +150,10 @@ public class TileScript : MonoBehaviour
     private void SellTower()
     {
         GameManager.Instance.SellTower();
+        Destroy(tower);
         myTower = null;
         this.myTower = null;
         IsEmpty = true;
-        ColorTile(emptyColor);
     }
 
     private void ColorTile(Color newColor)

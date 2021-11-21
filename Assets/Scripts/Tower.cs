@@ -9,6 +9,7 @@ public abstract class Tower : MonoBehaviour
 {
     [SerializeField] private string projectileType;
 
+    public TileScript tile;
     public SpriteRenderer spriteRenderer;
 
     private Monster target;
@@ -75,6 +76,9 @@ public abstract class Tower : MonoBehaviour
         double sell_price = .7 * price;
         PlayerStats.Fish += (int) sell_price;
         Destroy(this.gameObject);
+        Destroy(tile.tower);
+        tile.myTower = null;
+        tile.IsEmpty = true;
     }
 
     private void Attack()
