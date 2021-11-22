@@ -54,7 +54,7 @@ public abstract class Tower : MonoBehaviour
         Attack();
     }
 
-    public void Upgrade(int path) {
+    public void Upgrade(int path, int x, int y) {
       if (upgradeCounter < upgradeMax && PlayerStats.Fish >= upgradePrice) {
         if (path == 0) {
             damage += upgradeDamage;
@@ -70,6 +70,31 @@ public abstract class Tower : MonoBehaviour
         }
         upgradeCounter += 1;          
       }
+
+        // Debug.Log(upgradeCounter);
+        // Debug.Log(upgradeMax);
+
+        // For updating the art at the final upgrade
+        SpriteRenderer parentSpR = transform.parent.GetComponent<SpriteRenderer>();
+        Sprite parentSp = transform.parent.GetComponent<SpriteRenderer>().sprite;
+        if (upgradeCounter == upgradeMax) {
+            string ogSpriteName = parentSpR.name;
+            string spriteBaseName = ogSpriteName.Substring(0, ogSpriteName.Length - 8);
+            Debug.Log(ogSpriteName);
+            string dir = LevelManager.Instance.getDirection(x, y);
+            Debug.Log(dir);
+            if (spriteBaseName == "SBL") {
+                if (dir == "up") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLU");
+                } else if (dir == "down") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLD");
+                } else if (dir == "left") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLL");
+                } else {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLR");
+                }
+            }
+        }
     }
 
     public void Sell() {
