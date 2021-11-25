@@ -20,9 +20,12 @@ public class LevelManager : Singleton<LevelManager>
     private Point blueSpawn, redSpawn;
     public Point BlueSpawn { get { return blueSpawn; } }
     [SerializeField] private GameObject bluePortalPrefab, redPortalPrefab;
+    [SerializeField] private GameObject iglooPortalPrefab;
 
     public Portal BluePortal { get; set; }
     public Portal RedPortal { get; set; }
+
+    public Portal iglooPortal { get; set; }
 
     public float TileSize
     {
@@ -118,9 +121,14 @@ public class LevelManager : Singleton<LevelManager>
 
         redSpawn = new Point(11, 6);
 
-        GameObject redPortalObject = Instantiate(redPortalPrefab, Tiles[redSpawn].WorldPosition, Quaternion.identity);
-        RedPortal = redPortalObject.GetComponent<Portal>();
-        RedPortal.name = "RedPortal";
+        // GameObject redPortalObject = Instantiate(redPortalPrefab, Tiles[redSpawn].WorldPosition, Quaternion.identity);
+        // RedPortal = redPortalObject.GetComponent<Portal>();
+        // RedPortal.name = "RedPortal";
+
+        GameObject iglooPortalObject = Instantiate(iglooPortalPrefab, Tiles[redSpawn].WorldPosition, Quaternion.identity);
+        iglooPortal = iglooPortalObject.GetComponent<Portal>();
+        iglooPortal.name = "iglooPortal";
+        
     }
 
 

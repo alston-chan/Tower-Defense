@@ -70,6 +70,46 @@ public abstract class Tower : MonoBehaviour
         }
         upgradeCounter += 1;          
       }
+<<<<<<< Updated upstream
+=======
+
+        // Debug.Log(upgradeCounter);
+        // Debug.Log(upgradeMax);
+
+        // For updating the art at the final upgrade
+        SpriteRenderer parentSpR = transform.parent.GetComponent<SpriteRenderer>();
+        Sprite parentSp = transform.parent.GetComponent<SpriteRenderer>().sprite;
+        if (upgradeCounter == upgradeMax) {
+            string ogSpriteName = parentSpR.name;
+            string spriteBaseName = ogSpriteName.Substring(0, ogSpriteName.Length - 8);
+            Debug.Log(parentSp.name);
+            // string dir = ogSpriteName.Substring(0, ogSpriteName.Length - 7);
+            string dir = parentSp.name.Substring(parentSp.name.Length - 1);
+            // dir = dir.Substring(dir.Length - 1);
+            Debug.Log(dir);
+            if (spriteBaseName == "SBL") {
+                if (dir == "U") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLU");
+                } else if (dir == "D") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLD");
+                } else if (dir == "L") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLL");
+                } else {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLR");
+                }
+            } else if (spriteBaseName == "Wizard") {
+                if (dir == "U") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WUpgU");
+                } else if (dir == "D") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WUpgD");
+                } else if (dir == "L") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WUpgL");
+                } else {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WUpgR");
+                }
+            }
+        }
+>>>>>>> Stashed changes
     }
 
     public void Sell() {

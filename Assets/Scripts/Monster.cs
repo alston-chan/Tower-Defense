@@ -51,7 +51,7 @@ public class Monster : MonoBehaviour
                 Release();
             }
     */      
-            if (transform.position == LevelManager.Instance.RedPortal.transform.position)
+            if (transform.position == LevelManager.Instance.iglooPortal.transform.position)
             { 
                 Release();
                 PlayerStats.Fish -= lives_damage;  // decrement Fish count when polar bear makes it to the end depending on what type of bear got through
@@ -65,7 +65,7 @@ public class Monster : MonoBehaviour
                 }
                 else 
                 {
-                    destination = LevelManager.Instance.RedPortal.transform.position;
+                    destination = LevelManager.Instance.iglooPortal.transform.position;
                 }
             }
 
