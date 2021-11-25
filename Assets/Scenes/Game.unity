@@ -692,10 +692,10 @@ RectTransform:
   m_Father: {fileID: 1773420896}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -0}
+  m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &328977529
 MonoBehaviour:
@@ -1958,7 +1958,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f7333c344fa1c264b8ae9deac2c2979e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 752b2ac363d64fa4491a2ad0fd5008fb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2849,7 +2849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 47b2640b6055cf54a9936a88f2cec679, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 231b16377e8d84f458035d83c905578f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3725,6 +3725,8 @@ MonoBehaviour:
     type: 3}
   redPortalPrefab: {fileID: 7761742454651067831, guid: b903f847a6d13cf4cbe1bb0480de2f42,
     type: 3}
+  iglooPortalPrefab: {fileID: 7761742454651067831, guid: 834db7ac90a405a45bdd38a536211f1e,
+    type: 3}
 --- !u!4 &1546721483
 Transform:
   m_ObjectHideFlags: 0
@@ -3893,7 +3895,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f0f95e2008cf36a4d8f3fc0838a9b2a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35e28778fea71034e83c59acad4f2612, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
