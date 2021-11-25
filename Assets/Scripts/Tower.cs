@@ -70,12 +70,6 @@ public abstract class Tower : MonoBehaviour
         }
         upgradeCounter += 1;          
       }
-<<<<<<< Updated upstream
-=======
-
-        // Debug.Log(upgradeCounter);
-        // Debug.Log(upgradeMax);
-
         // For updating the art at the final upgrade
         SpriteRenderer parentSpR = transform.parent.GetComponent<SpriteRenderer>();
         Sprite parentSp = transform.parent.GetComponent<SpriteRenderer>().sprite;
@@ -109,7 +103,6 @@ public abstract class Tower : MonoBehaviour
                 }
             }
         }
->>>>>>> Stashed changes
     }
 
     public void Sell() {

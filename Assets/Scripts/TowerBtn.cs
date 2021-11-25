@@ -27,17 +27,17 @@ public class TowerBtn : MonoBehaviour
         string tooltip = string.Empty;
         switch (type) {
             case "Chick":
-                Tower t = new BasicTower();
+                Tower t = towerPrefab.GetComponent<Tower>();
                 tooltip = string.Format("<b>Chick</b> \nPrice: {0} \nDamage: {1} \nAttack Speed: {2} \nCamo Detection: {3} \nDescription: {4}", 
                     t.GetStats().Price, t.GetStats().Damage, t.GetStats().AttackCooldown, t.GetStats().CanSeeCamo, "Basic Tower");
                 break;
             case "Snowball":
-                Tower s = new NotSoBasicTower();
+                Tower s = towerPrefab.GetComponent<Tower>();
                 tooltip = string.Format("<b>Snowball</b> \nPrice: {0} \nDamage: {1} \nAttack Speed: {2} \nCamo Detection: {3} \nDescription: {4}", 
                     s.GetStats().Price, s.GetStats().Damage, s.GetStats().AttackCooldown, s.GetStats().CanSeeCamo, "Snowball Tower");
                 break;
             case "Wizard":
-                Tower w = new WizardTower();
+                Tower w = towerPrefab.GetComponent<Tower>();
                 tooltip = string.Format("<b>Wizard</b> \nPrice: {0} \nDamage: {1} \nAttack Speed: {2} \nCamo Detection: {3} \nDescription: {4}", 
                     w.GetStats().Price, w.GetStats().Damage, w.GetStats().AttackCooldown, w.GetStats().CanSeeCamo, "Wizard Tower");
                 break;
