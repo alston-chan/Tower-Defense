@@ -81,7 +81,17 @@ public abstract class Tower : MonoBehaviour
             string dir = parentSp.name.Substring(parentSp.name.Length - 1);
             // dir = dir.Substring(dir.Length - 1);
             Debug.Log(dir);
-            if (spriteBaseName == "SBL") {
+            if (spriteBaseName == "Base") {
+                if (dir == "U") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/BGU");
+                } else if (dir == "D") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/BGD");
+                } else if (dir == "L") {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/BGL");
+                } else {
+                    transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/BGR");
+                }
+            } else if (spriteBaseName == "SBL") {
                 if (dir == "U") {
                     transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/RLU");
                 } else if (dir == "D") {
