@@ -142,8 +142,12 @@ public class GameManager : Singleton<GameManager>
         statsPanel.SetActive(!statsPanel.activeSelf);
     }
 
-    public void SetTooltipText(string txt) {
+    public void SetTooltipText(string txt, bool red=false) {
         statsText.text = txt;
+        if (red)
+            statsText.color = new Color(1, 0, 0, 1);
+        else
+            statsText.color = new Color(0, 0, 0, 1);
     }
 
     // public void StartWave()
