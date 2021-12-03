@@ -692,10 +692,10 @@ RectTransform:
   m_Father: {fileID: 1773420896}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -0}
+  m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &328977529
 MonoBehaviour:
@@ -3201,6 +3201,12 @@ MonoBehaviour:
     - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
     - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
     spawnInterval: 0.15
+  currentWave:
+    waveName: 
+    monsterCount: 0
+    monsterType: []
+    spawnInterval: 0
+  killsNeeded: 15
   waveText: {fileID: 2022217769}
   slide: {fileID: 410885032}
 --- !u!1 &1364092272

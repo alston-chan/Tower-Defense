@@ -105,6 +105,7 @@ public class Monster : MonoBehaviour
             if (health <= 0)
             {
                 Release();
+                WaveSpawner.Instance.killsNeeded --;
                 PlayerStats.Fish += bounty;  // reward player for killing polar bear
             }
         }

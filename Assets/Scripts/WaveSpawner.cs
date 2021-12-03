@@ -10,6 +10,7 @@ public class Wave
     public string waveName;
     public int monsterCount;
     public Monster[] monsterType;
+    public int[] typeAmount;
     public float spawnInterval;
     public static float time;
 }
@@ -20,10 +21,14 @@ public class WaveSpawner : Singleton<WaveSpawner>
 {
 
     public Wave[] waves;
-    private Wave currentWave;
+    public Wave currentWave;
     private int currentWaveNumber;
     private float nextSpawnTime;
     private bool canSpawn = true;
+    public int killsNeeded = 0;
+    private int subWaveCount = 0; //the subwave that's spawning
+    private int subWaveAmount = 0; //the amount of monsters per subwave
+    private bool waveTrigger = true;
 
     public TMP_Text waveText;
     public Slider slide;
@@ -36,21 +41,27 @@ public class WaveSpawner : Singleton<WaveSpawner>
 
         waveText.text = "Wave: " + (currentWaveNumber + 1) + " / " + waves.Length;
         slide.value = 0;
+        
     }
 
 
-    private void Update()
+    public void Update()
     {
         currentWave = waves[currentWaveNumber];
         StartWave();
     }
 
-    public void btnStartNextWave()
+    private void btnStartNextWave()
     {
         //FindGameObjectsWithTag efficiency can be improved. Maybe store the monster in the list when it spawns?
-        GameObject[] monstersSpawned = GameObject.FindGameObjectsWithTag("Monster");
-        if (monstersSpawned.Length == 0 && !canSpawn && currentWaveNumber != waves.Length)
+        //GameObject[] monstersSpawned = GameObject.FindGameObjectsWithTag("Monster");
+        //monsterSpawned.Length == 0
+        //To Do: remove monsterCount and just use the sum of typeAmounts or synchronize them somehow. Change spawnWave so it works without monsterCount. Clean up code
+        if (killsNeeded == 0 && !canSpawn && currentWaveNumber != waves.Length)
         {
+            waveTrigger = true;
+            subWaveCount = 0;
+            subWaveAmount = 0;
             SpawnNextWave();
         }
     }
@@ -59,6 +70,8 @@ public class WaveSpawner : Singleton<WaveSpawner>
     {
         currentWaveNumber ++;
         canSpawn = true;
+        subWaveAmount = currentWave.typeAmount[subWaveCount];
+
 
         waveText.text = "Wave: " + (currentWaveNumber + 1) + " / " + waves.Length;
         slide.value = (float) (currentWaveNumber + 1) / waves.Length;
@@ -66,16 +79,40 @@ public class WaveSpawner : Singleton<WaveSpawner>
 
     private IEnumerator SpawnWave()
     {
-
+        // for(var i = 0; i<typeAmount.length; i++)
+        // {
+        // killsNeeded += typeAmount[i];
+        // }
+        //Random.Range(0, currentWave.monsterType.Length)
+        if (waveTrigger == true)
+        {
+            subWaveAmount = currentWave.typeAmount[subWaveCount];
+            waveTrigger = false;
+        }
+        killsNeeded = currentWave.monsterCount;
+        
         if (canSpawn && nextSpawnTime < Time.time)
         {
-            Monster monster = Pool.GetObject(currentWave.monsterType[Random.Range(0, currentWave.monsterType.Length)].name).GetComponent<Monster>();
+            Debug.Log("subWaveCount is" + subWaveCount);
+            
+            //if (subWaveAmount > 0)
+            Monster monster = Pool.GetObject(currentWave.monsterType[subWaveCount].name).GetComponent<Monster>();
             monster.Spawn();
             currentWave.monsterCount --;
+            subWaveAmount --;
             nextSpawnTime = Time.time + currentWave.spawnInterval;
             if (currentWave.monsterCount == 0)
             {
                 canSpawn = false;
+            }
+            if (subWaveAmount == 0)
+            {  
+                if ((subWaveCount + 1) < currentWave.typeAmount.Length)
+                {
+                    subWaveCount ++;
+                }
+                Debug.Log("subWaveCount is after change" + subWaveCount);
+                subWaveAmount = currentWave.typeAmount[subWaveCount];
             }
 
 
