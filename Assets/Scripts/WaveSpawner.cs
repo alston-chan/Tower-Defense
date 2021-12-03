@@ -51,7 +51,7 @@ public class WaveSpawner : Singleton<WaveSpawner>
         StartWave();
     }
 
-    private void btnStartNextWave()
+    public void btnStartNextWave()
     {
         //FindGameObjectsWithTag efficiency can be improved. Maybe store the monster in the list when it spawns?
         //GameObject[] monstersSpawned = GameObject.FindGameObjectsWithTag("Monster");
