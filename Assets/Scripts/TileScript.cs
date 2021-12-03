@@ -15,10 +15,12 @@ public class TileScript : MonoBehaviour
         }
     }
 
-    public bool IsEmpty { get; private set; }
+    public bool IsEmpty { get; set; }
 
-    private Tower myTower;
+    public Tower myTower;
+    public GameObject tower;
 
+    public bool IsPath = false;
     private Color32 fullColor = new Color32(255, 118, 118, 255);
     private Color32 emptyColor = new Color32(96, 255, 90, 255);
 
@@ -43,7 +45,7 @@ public class TileScript : MonoBehaviour
         // Check to see if mouse is clicking a button or if player has clicked buy button
         if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn != null)
         {
-            if (IsEmpty)
+            if (IsEmpty && IsPath == false)
             {
                 ColorTile(emptyColor);
 
@@ -66,6 +68,14 @@ public class TileScript : MonoBehaviour
                 GameManager.Instance.DeselectTower();
             }
         }
+        else if (!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedBtn == null && Input.inputString == "\b")
+        {
+            if (myTower != null)
+            {
+                GameManager.Instance.SelectTower(myTower);
+                SellTower();
+            }
+        }
     }
 
     private void OnMouseExit()
@@ -75,48 +85,51 @@ public class TileScript : MonoBehaviour
 
     private void PlaceTower()
     {
-        if (GameManager.Instance.BuyTower())  // can only place tower if you can buy it first
+        if (GameManager.Instance.BuyTower() && IsPath == false)  // can only place tower if you can buy it first
         {
-            // Debug.Log(GridPosition.X + ", " + GridPosition.Y);
-            string dir = LevelManager.Instance.getDirection(GridPosition.X, GridPosition.Y);
-            string ogSpriteName = GameManager.Instance.ClickedBtn.TowerPrefab.GetComponent<SpriteRenderer>().name;
-            string spriteBaseName = ogSpriteName.Substring(0, ogSpriteName.Length - 1);
             GameObject t = GameManager.Instance.ClickedBtn.TowerPrefab; 
-            // Debug.Log(spriteBaseName + ", " + dir);
+            // Debug.Log("t: " + t);
+            string dir = LevelManager.Instance.getDirection(GridPosition.X, GridPosition.Y);
+            // Debug.Log("dir: " + dir);
+            string ogSpriteName = t.GetComponent<SpriteRenderer>().sprite.name;
+            // Debug.Log("spriteName: " + ogSpriteName);
+            // Debug.Log("there");
+            string spriteBaseName = ogSpriteName.Substring(0, ogSpriteName.Length - 1);
+            Debug.Log(spriteBaseName + ", " + dir);
             // Debug.Log("Before: " + t);
             if (spriteBaseName == "Base") {
                 if (dir == "up") {
-                    t = Resources.Load("Prefabs/Towers/BaseU") as GameObject;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/BaseU");
                 } else if (dir == "down") {
-                    t = Resources.Load("Prefabs/Towers/BaseD") as GameObject;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/BaseD");
                 } else if (dir == "left") {
-                    t = Resources.Load("Prefabs/Towers/BaseL") as GameObject;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/BaseL");
                 } else {
-                    t = Resources.Load("Prefabs/Towers/BaseR") as GameObject;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/BaseR");
                 }
             } else if (spriteBaseName == "SBL") {
                 if (dir == "up") {
-                    t = Resources.Load("Prefabs/Towers/SBLU") as GameObject;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/SBLU");
                 } else if (dir == "down") {
-                    t = Resources.Load("Prefabs/Towers/SBLD") as GameObject;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/SBLD");
                 } else if (dir == "left") {
-                    t = Resources.Load("Prefabs/Towers/SBLL") as GameObject;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/SBLL");
                 } else {
-                    t = Resources.Load("Prefabs/Towers/SBLR") as GameObject;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/SBLR");
                 }
             } else if (spriteBaseName == "Wizard") {
                 if (dir == "up") {
-                    t = Resources.Load("Prefabs/Towers/WizardU") as GameObject;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WizardU");
                 } else if (dir == "down") {
-                    t = Resources.Load("Prefabs/Towers/WizardD") as GameObject;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WizardD");
                 } else if (dir == "left") {
-                    t = Resources.Load("Prefabs/Towers/WizardL") as GameObject;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WizardL");
                 } else {
-                    t = Resources.Load("Prefabs/Towers/WizardR") as GameObject;
+                    t.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WizardR");
                 }
             }
             // Debug.Log("After: " + t);
-            GameObject tower = Instantiate(t, WorldPosition, Quaternion.identity);
+            tower = Instantiate(t, WorldPosition, Quaternion.identity);
             
             //tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y;
 
@@ -128,11 +141,22 @@ public class TileScript : MonoBehaviour
 
             ColorTile(Color.white);
 
+            this.myTower.tile = this;
+
             Hover.Instance.Deactivate();
         }
         
 
         
+    }
+
+    private void SellTower()
+    {
+        GameManager.Instance.SellTower();
+        Destroy(tower);
+        myTower = null;
+        this.myTower = null;
+        IsEmpty = true;
     }
 
     private void ColorTile(Color newColor)

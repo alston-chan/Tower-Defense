@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b3d6fc7141d8b48489bfd48a36d3f9f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c819b1903f3f1e140a29fd8590a262de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileType: BasicTowerProjectile
+  tile: {fileID: 0}
   spriteRenderer: {fileID: 0}
   attackCooldown: 0.2
   damage: 0
