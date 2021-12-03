@@ -183,7 +183,7 @@ public abstract class Tower : MonoBehaviour
         if (other.CompareTag("Monster"))
         {
             Monster monster = other.GetComponent<Monster>();
-            if (monster.getID() == target.getID())
+            if (target != null && monster.getID() == target.getID())
             {
                 target = null;
             }
