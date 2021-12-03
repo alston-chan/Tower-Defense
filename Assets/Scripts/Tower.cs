@@ -136,10 +136,6 @@ public abstract class Tower : MonoBehaviour
             }
         }
 
-        if (target == null && monsters.Count > 0)
-        {
-            target = monsters.Dequeue();
-        }
         if (target != null && target.IsActive)
         {
             if (canAttack)
@@ -177,7 +173,7 @@ public abstract class Tower : MonoBehaviour
             Monster monster = other.GetComponent<Monster>();
             if (!monster.getCamo() || (canSeeCamo)) 
             {
-                monsters.Enqueue(monster);
+                target = monster;
             }
         }
     }
@@ -186,7 +182,11 @@ public abstract class Tower : MonoBehaviour
     {
         if (other.CompareTag("Monster"))
         {
-            target = null;
+            Monster monster = other.GetComponent<Monster>();
+            if (monster.getID() == target.getID())
+            {
+                target = null;
+            }
         }
     }
 

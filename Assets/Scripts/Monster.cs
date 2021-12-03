@@ -20,6 +20,13 @@ public class Monster : MonoBehaviour
     [SerializeField] private int bounty;
     [SerializeField] private int lives_damage;
 
+    [SerializeField] private int id;
+
+    public int getID()
+    {
+        return id;
+    }
+
     public bool getCamo()
     {
         return isCamo;
@@ -90,7 +97,8 @@ public class Monster : MonoBehaviour
         }
 
         restoreHealth();
-
+        System.Random ran = new System.Random();
+        id = ran.Next();
     }
 
     public void OnTriggerEnter2D(Collider2D other)
