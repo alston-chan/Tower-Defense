@@ -164,6 +164,7 @@ public abstract class Tower : MonoBehaviour
     public void Select()
     {
         spriteRenderer.enabled = !spriteRenderer.enabled;
+        // GameManager.Instance.UpdateTooltip();
     }
 
     public void OnTriggerEnter2D(Collider2D other)

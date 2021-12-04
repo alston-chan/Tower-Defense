@@ -35,15 +35,13 @@ public class TowerBtn : MonoBehaviour
                 break;
             case "Snowball":
                 Tower s = towerPrefab.GetComponentInChildren<Tower>();
-                tooltip = string.Format("<b>Snowball</b> \nPrice: {0} \nDamage: {1} \nAttack Speed: {2} \nCamo Detection: {3} \nDescription: {4}", 
-                    s.GetStats().Price, s.GetStats().Damage, s.GetStats().AttackCooldown, s.GetStats().CanSeeCamo, "Snowball Tower");
-                price = s.GetStats().Price;
+                tooltip = string.Format("<b>Snowball</b> \nDamage: {0} \nAttack Speed: {1} \nCamo Detection: {2} \nDescription: {3}", 
+                    s.GetStats().Damage, s.GetStats().AttackCooldown, s.GetStats().CanSeeCamo, "Snowball Tower");
                 break;
             case "Wizard":
                 Tower w = towerPrefab.GetComponentInChildren<Tower>();
-                tooltip = string.Format("<b>Wizard</b> \nPrice: {0} \nDamage: {1} \nAttack Speed: {2} \nCamo Detection: {3} \nDescription: {4}", 
-                    w.GetStats().Price, w.GetStats().Damage, w.GetStats().AttackCooldown, w.GetStats().CanSeeCamo, "Wizard Tower");
-                price = w.GetStats().Price;
+                tooltip = string.Format("<b>Wizard</b> \nDamage: {0} \nAttack Speed: {1} \nCamo Detection: {2} \nDescription: {3}", 
+                    w.GetStats().Damage, w.GetStats().AttackCooldown, w.GetStats().CanSeeCamo, "Wizard Tower");
                 break;
         }
         if (price > PlayerStats.Fish)
