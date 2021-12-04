@@ -68,7 +68,8 @@ public abstract class Tower : MonoBehaviour
                 PlayerStats.Fish -= upgradePrice;            
             }
         }
-        upgradeCounter += 1;          
+        price += 50;
+        upgradeCounter += 1;
       }
         // For updating the art at the final upgrade
         SpriteRenderer parentSpR = transform.parent.GetComponent<SpriteRenderer>();
