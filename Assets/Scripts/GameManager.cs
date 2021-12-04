@@ -103,8 +103,9 @@ public class GameManager : Singleton<GameManager>
             }
 
             GameManager.Instance.SetTooltipText(tooltip); 
+            statsPanel.SetActive(true);
         }
-        upgradePanel.SetActive(false);
+        
     }
 
     public void UpgradeDamage()
@@ -142,6 +143,11 @@ public class GameManager : Singleton<GameManager>
         statsPanel.SetActive(!statsPanel.activeSelf);
     }
 
+    public void backToOldPanel() {
+        statsPanel.SetActive(false);
+        SelectTower(selectedTower);
+    }
+
     public void SetTooltipText(string txt, bool red=false) {
         statsText.text = txt;
         if (red)
@@ -149,6 +155,12 @@ public class GameManager : Singleton<GameManager>
         else
             statsText.color = new Color(0, 0, 0, 1);
     }
+
+    // public void UpdateTooltip() {
+    //     if (selectedTower != null) {
+    //         SetTooltipText(selectedTower.GetStats().Damage.ToString());
+    //     }
+    // }
 
     // public void StartWave()
     // {
