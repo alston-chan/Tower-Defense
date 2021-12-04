@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 623540888987655360}
   - component: {fileID: -7331109361830804362}
   - component: {fileID: 954976026215194982}
-  - component: {fileID: 2348647785474000093}
+  - component: {fileID: 3638694600366607257}
   m_Layer: 0
   m_Name: Runner
   m_TagString: Monster
@@ -126,9 +126,10 @@ MonoBehaviour:
   speed: 6
   bounty: 10
   lives_damage: 2
+  id: 0
   destination: {x: 0, y: 0, z: 0}
---- !u!60 &2348647785474000093
-PolygonCollider2D:
+--- !u!61 &3638694600366607257
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -140,7 +141,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0825994, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -150,41 +151,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.112211645, y: -0.40662187}
-      - {x: 0.21304889, y: -0.28821135}
-      - {x: 0.22670725, y: -0.2484981}
-      - {x: 0.24178866, y: -0.10105677}
-      - {x: 0.21178865, y: 0.020731863}
-      - {x: 0.17319044, y: 0.103061154}
-      - {x: 0.12894322, y: 0.19642271}
-      - {x: 0.15649453, y: 0.25281268}
-      - {x: 0.22253591, y: 0.3138191}
-      - {x: 0.28, y: 0.35}
-      - {x: 0.28, y: 0.39999998}
-      - {x: 0.12580507, y: 0.43066832}
-      - {x: 0.12715459, y: 0.49536592}
-      - {x: 0.19, y: 0.58}
-      - {x: 0.13, y: 0.63}
-      - {x: 0.03, y: 0.63}
-      - {x: 0.012136942, y: 0.5922222}
-      - {x: -0.028414838, y: 0.5453659}
-      - {x: -0.10228281, y: 0.559066}
-      - {x: -0.14, y: 0.63}
-      - {x: -0.22, y: 0.63}
-      - {x: -0.26999998, y: 0.58}
-      - {x: -0.26999998, y: 0.51}
-      - {x: -0.22543755, y: 0.46979833}
-      - {x: -0.22248974, y: 0.43519282}
-      - {x: -0.25860426, y: 0.3054041}
-      - {x: -0.2871546, y: 0.20231703}
-      - {x: -0.30354378, y: -0.0067369863}
-      - {x: -0.34629348, y: -0.13880225}
-      - {x: -0.41, y: -0.19999999}
-      - {x: -0.41, y: -0.55}
-      - {x: -0.3558943, y: -0.6035773}
-      - {x: 0.14999999, y: -0.62}
-      - {x: 0.17, y: -0.59999996}
-      - {x: 0.17999999, y: -0.5}
-      - {x: 0.06735806, y: -0.48211354}
+  serializedVersion: 2
+  m_Size: {x: 0.61517954, y: 1.28}
+  m_EdgeRadius: 0
