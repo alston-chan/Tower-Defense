@@ -112,6 +112,7 @@ public abstract class Tower : MonoBehaviour
                     transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WUpgR");
                 }
             }
+            projectileType = "NotBasicTowerProjectile";
         }
     }
 
