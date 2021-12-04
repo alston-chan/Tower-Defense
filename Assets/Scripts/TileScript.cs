@@ -153,10 +153,7 @@ public class TileScript : MonoBehaviour
     private void SellTower()
     {
         GameManager.Instance.SellTower();
-        Destroy(tower);
-        myTower = null;
-        this.myTower = null;
-        IsEmpty = true;
+        GameManager.Instance.ShowStats();
     }
 
     private void ColorTile(Color newColor)
