@@ -31,6 +31,6 @@ public class UpgradeBtn : MonoBehaviour
         }
 
         GameManager.Instance.SetTooltipText(tooltip);
-        GameManager.Instance.ShowStats();
+        GameManager.Instance.statsPanel.SetActive(true);
     }
 }

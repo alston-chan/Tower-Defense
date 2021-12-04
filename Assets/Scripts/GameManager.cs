@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager>
     private Tower selectedTower;
 
     [SerializeField]
-    private GameObject statsPanel;
+    public GameObject statsPanel;
 
     [SerializeField]
     private Text statsText;
@@ -70,7 +70,7 @@ public class GameManager : Singleton<GameManager>
         tooltip = string.Format("Price: {0} \nDamage: {1} \nAttack Speed: {2} \nCamo Detection: {3} \nDescription: {4}", 
                     selectedTower.GetStats().Price, selectedTower.GetStats().Damage, selectedTower.GetStats().AttackCooldown, selectedTower.GetStats().CanSeeCamo, "");
         GameManager.Instance.SetTooltipText(tooltip);
-        GameManager.Instance.ShowStats();   
+        statsPanel.SetActive(true);   
         upgradePanel.SetActive(true);
         
     }
@@ -83,7 +83,7 @@ public class GameManager : Singleton<GameManager>
         }
 
         selectedTower = null;
-        GameManager.Instance.ShowStats();
+        statsPanel.SetActive(false);
         upgradePanel.SetActive(false); 
     }
 
@@ -127,6 +127,7 @@ public class GameManager : Singleton<GameManager>
     public void SellTower()
     {
         selectedTower.Sell();
+        statsPanel.SetActive(false);
         upgradePanel.SetActive(false);
     }
 

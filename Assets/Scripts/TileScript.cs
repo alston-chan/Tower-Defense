@@ -153,7 +153,6 @@ public class TileScript : MonoBehaviour
     private void SellTower()
     {
         GameManager.Instance.SellTower();
-        GameManager.Instance.ShowStats();
     }
 
     private void ColorTile(Color newColor)
