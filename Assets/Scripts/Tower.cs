@@ -112,6 +112,7 @@ public abstract class Tower : MonoBehaviour
                     transform.parent.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Towers/WUpgR");
                 }
             }
+            projectileType = "NotBasicTowerProjectile";
         }
     }
 
@@ -164,6 +165,7 @@ public abstract class Tower : MonoBehaviour
     public void Select()
     {
         spriteRenderer.enabled = !spriteRenderer.enabled;
+        // GameManager.Instance.UpdateTooltip();
     }
 
     public void OnTriggerEnter2D(Collider2D other)
