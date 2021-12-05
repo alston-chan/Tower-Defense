@@ -118,13 +118,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ecb4ba5503c95449b4daa3a4c7b76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 7
   health: 0
   armor: 0
   dodge: 0
   isCamo: 1
-  speed: 3
-  bounty: 10
+  speed: 4
+  bounty: 7
   lives_damage: 5
   id: 0
   destination: {x: 0, y: 0, z: 0}

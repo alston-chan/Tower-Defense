@@ -2283,17 +2283,18 @@ MonoBehaviour:
     typeAmount: 14000000
     spawnInterval: 0.3
   - waveName: Runner Rush
-    monsterCount: 15
+    monsterCount: 20
     monsterType:
     - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
-    typeAmount: 0f000000
-    spawnInterval: 0.3
+    typeAmount: 14000000
+    spawnInterval: 0.2
   - waveName: Runner + Basic Rush
-    monsterCount: 30
+    monsterCount: 35
     monsterType:
     - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
     - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
-    typeAmount: 0f0000000f000000
+    - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
+    typeAmount: 0f0000000f00000005000000
     spawnInterval: 0.4
   - waveName: Sneak Warning
     monsterCount: 1
@@ -2309,18 +2310,80 @@ MonoBehaviour:
     typeAmount: 0a0000000a000000
     spawnInterval: 0.5
   - waveName: Sneak Rush
-    monsterCount: 25
+    monsterCount: 35
     monsterType:
     - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
-    typeAmount: 19000000
-    spawnInterval: 0.3
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    typeAmount: 190000000a000000
+    spawnInterval: 0.1
   - waveName: Sneak + Tank
-    monsterCount: 30
+    monsterCount: 40
     monsterType:
     - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
     - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
-    typeAmount: 140000000a000000
-    spawnInterval: 0.5
+    typeAmount: 1400000014000000
+    spawnInterval: 0.2
+  - waveName: Sneak + Tank + Runner
+    monsterCount: 40
+    monsterType:
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
+    typeAmount: 0500000005000000140000000a000000
+    spawnInterval: 0.3
+  - waveName: Basic + Sneak Rush
+    monsterCount: 50
+    monsterType:
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    typeAmount: 0500000005000000140000000a0000000a000000
+    spawnInterval: 0.2
+  - waveName: It's All Tanks!
+    monsterCount: 30
+    monsterType:
+    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
+    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    typeAmount: 0500000005000000140000000a0000000a000000
+    spawnInterval: 0.2
+  - waveName: Keep Running!
+    monsterCount: 50
+    monsterType:
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    typeAmount: 0a000000050000000a0000000500000014000000
+    spawnInterval: 0.3
+  - waveName: Potpourri
+    monsterCount: 70
+    monsterType:
+    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
+    - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
+    typeAmount: 050000000a0000000a000000050000001400000014000000
+    spawnInterval: 0.2
+  - waveName: Desperate Rush
+    monsterCount: 100
+    monsterType:
+    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
+    - {fileID: -4380409589610218267, guid: 74a4f4e3beec2b2459485af643fa3369, type: 3}
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    - {fileID: -2983222288631913921, guid: 4b1b7fb12a7e14e42b532d030df9ee1a, type: 3}
+    - {fileID: 954976026215194982, guid: 9dfbada4037fa394dbc7cbf17cc7a86f, type: 3}
+    - {fileID: 7866397649963617635, guid: 2403ce2ec8fc8d44f9ffce5d60d7a568, type: 3}
+    typeAmount: 0a000000140000000a0000000f0000001400000014000000
+    spawnInterval: 0.2
   currentWave:
     waveName: 
     monsterCount: 0
