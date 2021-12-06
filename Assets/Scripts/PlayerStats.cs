@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
     public static int Fish;
-    public int startingFish = 200;
+    public int startingFish = 200; // 160
 
     // public static int Money;
     // public int startingMoney = 400;
@@ -18,6 +19,13 @@ public class PlayerStats : MonoBehaviour
         Fish = startingFish;
         // Money = startingMoney;
         // Lives = startingLives;
+    }
+
+    public void Update()
+    {
+        if (PlayerStats.Fish <= 0) {
+            SceneManager.LoadScene(0);
+        }
     }
 
     /* This doesn't work but idk why */
