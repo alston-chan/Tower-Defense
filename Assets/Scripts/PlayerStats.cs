@@ -23,9 +23,6 @@ public class PlayerStats : MonoBehaviour
 
     public void Update()
     {
-        if (PlayerStats.Fish <= 0) {
-            SceneManager.LoadScene(0);
-        }
     }
 
     /* This doesn't work but idk why */
